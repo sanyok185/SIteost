@@ -193,10 +193,10 @@ body {
   color: #000
 }
 .title__green {
-  line-height: 1;
+  line-height: 1.2;
   position: relative;
   z-index: 2;
-  padding: 0 .9375rem;
+  padding: .125rem .9375rem;
   border-radius: .625rem;
   background-color: #b2fd53;
   display: inline-flex;
@@ -550,7 +550,7 @@ body {
     font-size: 1.5625rem
   }
   .title__green {
-    height: 2.6875rem
+    height: 2.5rem
   }
   .button-calc {
     font-size: 1.25rem
@@ -796,14 +796,14 @@ body {
       font-size: calc(1.5625rem + 2.1875 * (100vw - 20rem)/ 55.625)
     }
   }
-  @supports (height:clamp(2.6875rem ,2.080758427rem + 3.0337078652vw ,4.375rem)) {
+  @supports (height:clamp(2.5rem ,1.8258426966rem + 3.3707865169vw ,4.375rem)) {
     .title__green {
-      height: clamp(2.6875rem ,2.080758427rem + 3.0337078652vw ,4.375rem)
+      height: clamp(2.5rem ,1.8258426966rem + 3.3707865169vw ,4.375rem)
     }
   }
-  @supports not (height:clamp(2.6875rem ,2.080758427rem + 3.0337078652vw ,4.375rem)) {
+  @supports not (height:clamp(2.5rem ,1.8258426966rem + 3.3707865169vw ,4.375rem)) {
     .title__green {
-      height: calc(2.6875rem + 1.6875 * (100vw - 20rem)/ 55.625)
+      height: calc(2.5rem + 1.875 * (100vw - 20rem)/ 55.625)
     }
   }
   @supports (font-size:clamp(1.25rem ,1.1601123596rem + 0.4494382022vw ,1.5rem)) {

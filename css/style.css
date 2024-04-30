@@ -196,7 +196,7 @@ body {
   line-height: 1.2;
   position: relative;
   z-index: 2;
-  padding: .125rem .9375rem;
+  padding: .125rem .9375rem 0 .9375rem;
   border-radius: .625rem;
   background-color: #b2fd53;
   display: inline-flex;

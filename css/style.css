@@ -193,6 +193,7 @@ body {
   color: #000
 }
 .title__green {
+  line-height: 1;
   position: relative;
   z-index: 2;
   padding: 0 .9375rem;
@@ -458,6 +459,9 @@ body {
   .title {
     font-size: 3.75rem
   }
+  .title__green {
+    height: 4.375rem
+  }
   .button-calc {
     font-size: 1.5rem
   }
@@ -544,6 +548,9 @@ body {
 @media (max-width:20em) {
   .title {
     font-size: 1.5625rem
+  }
+  .title__green {
+    height: 2.6875rem
   }
   .button-calc {
     font-size: 1.25rem
@@ -787,6 +794,16 @@ body {
   @supports not (font-size:clamp(1.5625rem ,0.7759831461rem + 3.9325842697vw ,3.75rem)) {
     .title {
       font-size: calc(1.5625rem + 2.1875 * (100vw - 20rem)/ 55.625)
+    }
+  }
+  @supports (height:clamp(2.6875rem ,2.080758427rem + 3.0337078652vw ,4.375rem)) {
+    .title__green {
+      height: clamp(2.6875rem ,2.080758427rem + 3.0337078652vw ,4.375rem)
+    }
+  }
+  @supports not (height:clamp(2.6875rem ,2.080758427rem + 3.0337078652vw ,4.375rem)) {
+    .title__green {
+      height: calc(2.6875rem + 1.6875 * (100vw - 20rem)/ 55.625)
     }
   }
   @supports (font-size:clamp(1.25rem ,1.1601123596rem + 0.4494382022vw ,1.5rem)) {

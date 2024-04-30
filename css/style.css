@@ -202,6 +202,11 @@ body {
   justify-content: center;
   align-items: center
 }
+.title__green span {
+  width: 100%;
+  height: 100%;
+  display: block
+}
 .title__green svg {
   z-index: -1;
   position: absolute;
@@ -570,7 +575,7 @@ body {
     flex-basis: 1.5625rem
   }
   .hero {
-    padding-top: 2.8125rem
+    padding-top: 2.5rem
   }
   .hero__container {
     padding-bottom: 4.6875rem
@@ -869,14 +874,14 @@ body {
       flex-basis: calc(1.5625rem + .5 * (100vw - 20rem)/ 55.625)
     }
   }
-  @supports (padding-top:clamp(2.8125rem ,2.2507022472rem + 2.808988764vw ,4.375rem)) {
+  @supports (padding-top:clamp(2.5rem ,1.8258426966rem + 3.3707865169vw ,4.375rem)) {
     .hero {
-      padding-top: clamp(2.8125rem ,2.2507022472rem + 2.808988764vw ,4.375rem)
+      padding-top: clamp(2.5rem ,1.8258426966rem + 3.3707865169vw ,4.375rem)
     }
   }
-  @supports not (padding-top:clamp(2.8125rem ,2.2507022472rem + 2.808988764vw ,4.375rem)) {
+  @supports not (padding-top:clamp(2.5rem ,1.8258426966rem + 3.3707865169vw ,4.375rem)) {
     .hero {
-      padding-top: calc(2.8125rem + 1.5625 * (100vw - 20rem)/ 55.625)
+      padding-top: calc(2.5rem + 1.875 * (100vw - 20rem)/ 55.625)
     }
   }
   @supports (padding-bottom:clamp(4.6875rem ,3.1144662921rem + 7.8651685393vw ,9.0625rem)) {

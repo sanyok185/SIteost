@@ -192,11 +192,13 @@ body {
   text-transform: uppercase;
   color: #000
 }
+.title span {
+  background-color: #b2fd53;
+  padding: .125rem .9375rem;
+  border-radius: .625rem
+}
 .title__green {
   display: inline-block;
-  background-color: #b2fd53;
-  border-radius: .625rem;
-  padding: .125rem .9375rem;
   position: relative;
   z-index: 2
 }
@@ -418,7 +420,7 @@ body {
   font-size: 5rem;
   color: #b2fd53;
   font-weight: 900;
-  line-height: 1.25
+  line-height: 1.2
 }
 .item-why__text {
   font-weight: 500;
@@ -481,10 +483,10 @@ body {
     flex-basis: 2.0625rem
   }
   .hero {
-    padding-top: 3.75rem
+    padding-top: 4.375rem
   }
   .hero__container {
-    padding-bottom: 8.6875rem
+    padding-bottom: 9.0625rem
   }
   .hero__title {
     font-size: 6.25rem
@@ -536,7 +538,7 @@ body {
 }
 @media (max-width:25em) {
   .button-calc {
-    padding: .9375rem 1.25rem
+    padding: .75rem 1.0625rem
   }
 }
 @media (max-width:20em) {
@@ -568,10 +570,10 @@ body {
     flex-basis: 1.5625rem
   }
   .hero {
-    padding-top: 1.25rem
+    padding-top: 2.625rem
   }
   .hero__container {
-    padding-bottom: 2.625rem
+    padding-bottom: 5rem
   }
   .hero__title {
     font-size: 2.8125rem
@@ -729,7 +731,10 @@ body {
   .hero__animation {
     position: absolute;
     right: 0;
-    bottom: 0
+    bottom: .625rem
+  }
+  .why__image {
+    bottom: -.0625rem
   }
   .why__items {
     gap: 1.875rem
@@ -858,24 +863,24 @@ body {
       flex-basis: calc(1.5625rem + .5 * (100vw - 20rem)/ 55.625)
     }
   }
-  @supports (padding-top:clamp(1.25rem ,0.3511235955rem + 4.4943820225vw ,3.75rem)) {
+  @supports (padding-top:clamp(2.625rem ,1.9957865169rem + 3.1460674157vw ,4.375rem)) {
     .hero {
-      padding-top: clamp(1.25rem ,.3511235955rem + 4.4943820225vw ,3.75rem)
+      padding-top: clamp(2.625rem ,1.9957865169rem + 3.1460674157vw ,4.375rem)
     }
   }
-  @supports not (padding-top:clamp(1.25rem ,0.3511235955rem + 4.4943820225vw ,3.75rem)) {
+  @supports not (padding-top:clamp(2.625rem ,1.9957865169rem + 3.1460674157vw ,4.375rem)) {
     .hero {
-      padding-top: calc(1.25rem + 2.5 * (100vw - 20rem)/ 55.625)
+      padding-top: calc(2.625rem + 1.75 * (100vw - 20rem)/ 55.625)
     }
   }
-  @supports (padding-bottom:clamp(2.625rem ,0.4452247191rem + 10.8988764045vw ,8.6875rem)) {
+  @supports (padding-bottom:clamp(5rem ,3.5393258427rem + 7.3033707865vw ,9.0625rem)) {
     .hero__container {
-      padding-bottom: clamp(2.625rem ,.4452247191rem + 10.8988764045vw ,8.6875rem)
+      padding-bottom: clamp(5rem ,3.5393258427rem + 7.3033707865vw ,9.0625rem)
     }
   }
-  @supports not (padding-bottom:clamp(2.625rem ,0.4452247191rem + 10.8988764045vw ,8.6875rem)) {
+  @supports not (padding-bottom:clamp(5rem ,3.5393258427rem + 7.3033707865vw ,9.0625rem)) {
     .hero__container {
-      padding-bottom: calc(2.625rem + 6.0625 * (100vw - 20rem)/ 55.625)
+      padding-bottom: calc(5rem + 4.0625 * (100vw - 20rem)/ 55.625)
     }
   }
   @supports (font-size:clamp(2.8125rem ,1.5765449438rem + 6.1797752809vw ,6.25rem)) {

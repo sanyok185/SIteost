@@ -193,10 +193,10 @@ body {
   color: #000
 }
 .title__green {
-  line-height: 1.2;
+  line-height: 1;
   position: relative;
   z-index: 2;
-  padding: .125rem .9375rem 0 .9375rem;
+  padding: .125rem .9375rem;
   border-radius: .625rem;
   background-color: #b2fd53;
   display: inline-flex;
@@ -719,7 +719,7 @@ body {
 }
 @media (max-width:47.99875em) {
   .title__green {
-    padding: .1875rem .75rem 0 .75rem
+    padding: .1875rem .75rem
   }
   .button-calc {
     padding: .8125rem 1.5625rem

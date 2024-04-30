@@ -193,7 +193,7 @@ body {
   color: #000
 }
 .title__green {
-  vertical-align: middle;
+  vertical-align: bottom;
   line-height: 1;
   position: relative;
   z-index: 2;

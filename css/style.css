@@ -817,7 +817,7 @@ textarea.input {
 .request__text:not(:last-child) {
   margin-bottom: .625rem
 }
-.request_.webpts {
+.request__presents {
   position: relative;
   z-index: 2;
   display: flex;
@@ -825,7 +825,7 @@ textarea.input {
   gap: .9375rem;
   max-width: 18.75rem
 }
-.request_.webpt {
+.request__present {
   border-radius: .3125rem;
   display: inline-flex;
   align-items: center;

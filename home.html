@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20240430121258">
+	<link rel="stylesheet" href="css/style.min.css?_v=20240501190505">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -75,7 +75,7 @@
 							<div class="hero__text">
 								Натискайте, якщо хочете обігнати конкурентів
 							</div>
-							<div class="hero__button button-calc">
+							<div class="hero__button  button-calc">
 								Розрахувати вартість
 								<svg class="hero__circle circle" xmlns="http://www.w3.org/2000/svg" width="178" height="178" fill="none" viewBox="0 0 178 178">
 									<g filter="url(#a)">
@@ -119,7 +119,7 @@
 						</div>
 						<div class="why__body">
 							<div class="why__content">
-								<div class="why__title title">
+								<h2 class="why__title title title--black">
 									Нас обирають підприємці:
 									<div class="title__green">
 										чому?
@@ -130,7 +130,7 @@
 											<path fill="#B2FD53" d="m128.1.752 42.416 8.78L43.272 624.184l-42.415-8.78z" />
 										</svg>
 									</div>
-								</div>
+								</h2>
 								<ul class="why__list">
 									<li>
 										<img src="img/why/diamond.webp" alt="Image" />
@@ -168,7 +168,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="why__items" data-watch>
+					<div class="why__items" data-watch data-watch-once>
 						<div class="why__item item-why">
 							<div class="item-why__number"><span data-digits-counter data-digits-counter-speed="5000">350</span>+</div>
 							<div class="item-why__text">реалізованих проектів</div>
@@ -188,13 +188,491 @@
 					</div>
 				</div>
 			</section>
+			<section class="page__request request">
+				<div class="request__container">
+					<div class="request__content">
+						<img class="request__bg request__bg--1" src="img/request/bg_form_1.webp" alt="Image">
+						<img class="request__bg request__bg--2" src="img/request/bg_form_2.webp" alt="Image">
+						<h2 class="request__title">
+							Залиште заявку та отримайте 
+							<span>гарантований</span> подарунок
+						</h2>
+						<div class="request__text">
+							Подарунок на вибір:
+						</div>
+						<div class="request_.webpts">
+							<div class="request_.webpt">
+								<img src="img/request/icon_logotype.svg" alt="Icon">
+								<span>Розробка логотипу</span>
+							</div>
+							<div class="request_.webpt">
+								<img src="img/request/domain.svg" alt="Icon">
+								<span>3 місяці хостингу</span>
+							</div>
+							<div class="request_.webpt">
+								<img src="img/request/tech.svg" alt="Icon">
+								<span>Тех. підтримка 1 місяць</span>
+							</div>
+						</div>
+					</div>
+					<form class="request__form form-request" action="files/sendmail/sendmail.php" method="POST">
+						<h3 class="form-request__title">
+							Зробимо розрахунок Вашого сайту
+						</h3>
+						<div class="form-request__items">
+							<div class="form-request__item">
+								<label for="name" class="form-request__label">Ваше ім'я</label>
+								<input id="name" data-required autocomplete="off" type="text" name="name" data-error="Помилка" placeholder="Вкажіть ім'я" class="form-request__input input">
+							</div>
+							<div class="form-request__item">
+								<label for="phone" class="form-request__label">Номер телефону</label>
+								<input id="phone" data-required autocomplete="off" type="text" name="phone" data-error="Помилка" placeholder="Введіть номер телефону" class="form-request__input input">
+							</div>
+							<div class="form-request__item">
+								<label for="field" class="form-request__label">Сфера діяльності</label>
+								<input id="field" data-required autocomplete="off" type="field" name="name" data-error="Помилка" placeholder="Чим ви займаєтесь?" class="form-request__input input">
+							</div>
+						</div>
+						<label for="options" class="form-request__label">Зручний метод зв'язку</label>
+						<div class="form-request__options options" id="options">
+							<div class="options__item">
+								<input id="Telegram" class="options__input" checked type="radio" value="1" name="messenger">
+								<label for="Telegram" class="options__label">
+									<img src="img/request/telegram.svg" alt="Image">
+									<span class="options__text">Telegram</span>
+								</label>
+							</div>
+							<div class="options__item">
+								<input id="WhatsApp" class="options__input" type="radio" value="2" name="messenger">
+								<label for="WhatsApp" class="options__label options__label--whatsapp">
+									<img src="img/request/whatsapp.svg" alt="Image">
+									<span class="options__text">WhatsApp</span>
+								</label>
+							</div>
+							<div class="options__item">
+								<input id="Viber" class="options__input" type="radio" value="3" name="messenger">
+								<label for="Viber" class="options__label options__label--viber">
+									<img src="img/request/viber.svg" alt="Image">
+									<span class="options__text">Viber</span>
+								</label>
+							</div>
+						</div>
+						<button type="submit" class="form-request__button button">Розрахувати вартість</button>
+						<div class="form-request__consent">
+							Натискаючи на кнопку я даю згоду на <a href="#">обробку персональних даних</a>
+						</div>
+					</form>
+				</div>
+			</section>
+			<section class="page__cases cases">
+				<div class="cases__container">
+					<h2 class="cases__title title">
+						Наші <span>кейси</span>
+					</h2>
+					<div data-tabs class="cases__tabs tabs">
+						<nav data-tabs-titles class="tabs__navigation">
+							<button type="button" class="tabs__title _tab-active">Корпоративний</button>
+							<button type="button" class="tabs__title">Інтернет магазин</button>
+							<button type="button" class="tabs__title">Landing Page</button>
+						</nav>
+						<div data-tabs-body class="tabs__content">
+							<div class="tabs__body">
+								<div class="tabs__items">
+									<div class="tabs__item item-tabs">
+										<div class="item-tabs__content">
+											<h3 class="item-tabs__name">
+												protectlaw
+											</h3>
+											<div class="item-tabs__caption">
+												Адвокатське об’єднання “Протекція права”
+											</div>
+											<div class="item-tabs__labels">
+												<div class="item-tabs__label">
+													Корпоративний сайт
+												</div>
+												<div class="item-tabs__label">
+													WordPress
+												</div>
+												<div class="item-tabs__label">
+													30 днів
+												</div>
+											</div>
+											<a href="#" class="item-tabs__button button button--light">
+												Дивитись кейс
+											</a>
+										</div>
+										<div class="item-tabs__logo" style="background-color: #6d513e;">
+											<img src="img/cases/logo_protectlaw.svg" alt="Image">
+										</div>
+									</div>
+									<div class="tabs__item item-tabs">
+										<div class="item-tabs__content">
+											<h3 class="item-tabs__name">
+												Budowa
+											</h3>
+											<div class="item-tabs__caption">
+												продаж та доставка будівельних матеріалів
+											</div>
+											<div class="item-tabs__labels">
+												<div class="item-tabs__label">
+													Корпоративний сайт
+												</div>
+												<div class="item-tabs__label">
+													WordPress
+												</div>
+												<div class="item-tabs__label">
+													25 днів
+												</div>
+											</div>
+											<a href="#" class="item-tabs__button button button--light">
+												Дивитись кейс
+											</a>
+										</div>
+										<div class="item-tabs__logo" style="background-color: #ff0;">
+											<img src="img/cases/logo_budowa.svg" alt="Image">
+										</div>
+									</div>
+									<div class="tabs__item item-tabs">
+										<div class="item-tabs__content">
+											<h3 class="item-tabs__name">
+												tattoo044
+											</h3>
+											<div class="item-tabs__caption">
+												мережа тату студій TATTOO044
+											</div>
+											<div class="item-tabs__labels">
+												<div class="item-tabs__label">
+													Корпоративний сайт
+												</div>
+												<div class="item-tabs__label">
+													WordPress
+												</div>
+												<div class="item-tabs__label">
+													25 днів
+												</div>
+											</div>
+											<a href="#" class="item-tabs__button button button--light">
+												Дивитись кейс
+											</a>
+										</div>
+										<div class="item-tabs__logo" style="background-color: #383838;">
+											<img src="img/cases/logo_tattoo.svg" alt="Image">
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="tabs__body">
+								<div class="tabs__items">
+									<div class="tabs__item item-tabs">
+										<div class="item-tabs__content">
+											<h3 class="item-tabs__name">
+												Budowa
+											</h3>
+											<div class="item-tabs__caption">
+												продаж та доставка будівельних матеріалів
+											</div>
+											<div class="item-tabs__labels">
+												<div class="item-tabs__label">
+													Корпоративний сайт
+												</div>
+												<div class="item-tabs__label">
+													WordPress
+												</div>
+												<div class="item-tabs__label">
+													25 днів
+												</div>
+											</div>
+											<a href="#" class="item-tabs__button button button--light">
+												Дивитись кейс
+											</a>
+										</div>
+										<div class="item-tabs__logo" style="background-color: #ff0;">
+											<img src="img/cases/logo_budowa.svg" alt="Image">
+										</div>
+									</div>
+									<div class="tabs__item item-tabs">
+										<div class="item-tabs__content">
+											<h3 class="item-tabs__name">
+												tattoo044
+											</h3>
+											<div class="item-tabs__caption">
+												мережа тату студій TATTOO044
+											</div>
+											<div class="item-tabs__labels">
+												<div class="item-tabs__label">
+													Корпоративний сайт
+												</div>
+												<div class="item-tabs__label">
+													WordPress
+												</div>
+												<div class="item-tabs__label">
+													25 днів
+												</div>
+											</div>
+											<a href="#" class="item-tabs__button button button--light">
+												Дивитись кейс
+											</a>
+										</div>
+										<div class="item-tabs__logo" style="background-color: #383838;">
+											<img src="img/cases/logo_tattoo.svg" alt="Image">
+										</div>
+									</div>
+									<div class="tabs__item item-tabs">
+										<div class="item-tabs__content">
+											<h3 class="item-tabs__name">
+												protectlaw
+											</h3>
+											<div class="item-tabs__caption">
+												Адвокатське об’єднання “Протекція права”
+											</div>
+											<div class="item-tabs__labels">
+												<div class="item-tabs__label">
+													Корпоративний сайт
+												</div>
+												<div class="item-tabs__label">
+													WordPress
+												</div>
+												<div class="item-tabs__label">
+													30 днів
+												</div>
+											</div>
+											<a href="#" class="item-tabs__button button button--light">
+												Дивитись кейс
+											</a>
+										</div>
+										<div class="item-tabs__logo" style="background-color: #6d513e;">
+											<img src="img/cases/logo_protectlaw.svg" alt="Image">
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="tabs__body">
+								<div class="tabs__items">
+									<div class="tabs__item item-tabs">
+										<div class="item-tabs__content">
+											<h3 class="item-tabs__name">
+												tattoo044
+											</h3>
+											<div class="item-tabs__caption">
+												мережа тату студій TATTOO044
+											</div>
+											<div class="item-tabs__labels">
+												<div class="item-tabs__label">
+													Корпоративний сайт
+												</div>
+												<div class="item-tabs__label">
+													WordPress
+												</div>
+												<div class="item-tabs__label">
+													25 днів
+												</div>
+											</div>
+											<a href="#" class="item-tabs__button button button--light">
+												Дивитись кейс
+											</a>
+										</div>
+										<div class="item-tabs__logo" style="background-color: #383838;">
+											<img src="img/cases/logo_tattoo.svg" alt="Image">
+										</div>
+									</div>
+									<div class="tabs__item item-tabs">
+										<div class="item-tabs__content">
+											<h3 class="item-tabs__name">
+												protectlaw
+											</h3>
+											<div class="item-tabs__caption">
+												Адвокатське об’єднання “Протекція права”
+											</div>
+											<div class="item-tabs__labels">
+												<div class="item-tabs__label">
+													Корпоративний сайт
+												</div>
+												<div class="item-tabs__label">
+													WordPress
+												</div>
+												<div class="item-tabs__label">
+													30 днів
+												</div>
+											</div>
+											<a href="#" class="item-tabs__button button button--light">
+												Дивитись кейс
+											</a>
+										</div>
+										<div class="item-tabs__logo" style="background-color: #6d513e;">
+											<img src="img/cases/logo_protectlaw.svg" alt="Image">
+										</div>
+									</div>
+									<div class="tabs__item item-tabs">
+										<div class="item-tabs__content">
+											<h3 class="item-tabs__name">
+												Budowa
+											</h3>
+											<div class="item-tabs__caption">
+												продаж та доставка будівельних матеріалів
+											</div>
+											<div class="item-tabs__labels">
+												<div class="item-tabs__label">
+													Корпоративний сайт
+												</div>
+												<div class="item-tabs__label">
+													WordPress
+												</div>
+												<div class="item-tabs__label">
+													25 днів
+												</div>
+											</div>
+											<a href="#" class="item-tabs__button button button--light">
+												Дивитись кейс
+											</a>
+										</div>
+										<div class="item-tabs__logo" style="background-color: #ff0;">
+											<img src="img/cases/logo_budowa.svg" alt="Image">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<a href="#" class="cases__button button button--light">Дивитись всі кейси</a>
+				</div>
+			</section>
+			<section class="page__offer offer">
+				<div class="offer__container">
+					<h2 class="offer__title title">
+						Що ми
+						<div>пропонуємо</div>
+					</h2>
+					<div class="offer__items">
+						<article class="offer__item item-offer">
+							<div class="item-offer__content">
+								<h4 class="item-offer__name">
+									Корпоративний сайт
+								</h4>
+								<div class="item-offer__text">
+									<p>Ефективний рекламний майданчик, який демонструє переваги компанії, залучає користувача, підвищує його лояльність та відданість бренду.</p>
+								</div>
+								<div class="item-offer__labels">
+									<div class="item-offer__label">
+										Розробка: від 14 робочих днів
+									</div>
+									<div class="item-offer__label">
+										Вартість: від 1 200$
+									</div>
+								</div>
+								<button type="button" class="item-offer__button button">
+									Хочу такий сайт
+								</button>
+							</div>
+							<div class="item-offer__icon">
+								<img src="img/offer/01.svg" alt="Image">
+							</div>
+						</article>
+						<article class="offer__item item-offer">
+							<div class="item-offer__content">
+								<h4 class="item-offer__name">
+									Сайт-візитка
+								</h4>
+								<div class="item-offer__text">
+									<p>Роль “обличчя” успішної компанії часто відводять сайту-візитці. На одній або кількох сторінках міститься основна інформація про компанію або приватну особу.</p>
+								</div>
+								<div class="item-offer__labels">
+									<div class="item-offer__label">
+										Розробка: від 9 робочих днів
+									</div>
+									<div class="item-offer__label">
+										Вартість: від 800$
+									</div>
+								</div>
+								<button type="button" class="item-offer__button button">
+									Хочу такий сайт
+								</button>
+							</div>
+							<div class="item-offer__icon">
+								<img src="img/offer/02.svg" alt="Image">
+							</div>
+						</article>
+						<article class="offer__item item-offer">
+							<div class="item-offer__content">
+								<h4 class="item-offer__name">
+									Landing Page
+								</h4>
+								<div class="item-offer__text">
+									<p>Лендінг – сторінка в інтернеті, розроблена для збору контактних даних, продажу послуг або товарів, створення унікального портфоліо.</p>
+								</div>
+								<div class="item-offer__labels">
+									<div class="item-offer__label">
+										Розробка: від 7 робочих днів
+									</div>
+									<div class="item-offer__label">
+										Вартість: від 600$
+									</div>
+								</div>
+								<button type="button" class="item-offer__button button">
+									Хочу такий сайт
+								</button>
+							</div>
+							<div class="item-offer__icon">
+								<img src="img/offer/03.svg" alt="Image">
+							</div>
+						</article>
+						<article class="offer__item item-offer">
+							<div class="item-offer__content">
+								<h4 class="item-offer__name">
+									Інтернет-магазин
+								</h4>
+								<div class="item-offer__text">
+									<p>Інтернет-магазин – це надійний майданчик для розвитку бізнесу в інтернеті. Він дозволяє здійснювати продаж із будь-якої точки світу.</p>
+								</div>
+								<div class="item-offer__labels">
+									<div class="item-offer__label">
+										Розробка: від 40 робочих днів
+									</div>
+									<div class="item-offer__label">
+										Вартість: від 1 500$
+									</div>
+								</div>
+								<button type="button" class="item-offer__button button">
+									Хочу такий сайт
+								</button>
+							</div>
+							<div class="item-offer__icon">
+								<img src="img/offer/04.svg" alt="Image">
+							</div>
+						</article>
+						<article class="offer__item item-offer">
+							<div class="item-offer__content">
+								<h4 class="item-offer__name">
+									Підтримка сайту
+								</h4>
+								<div class="item-offer__text">
+									<p>Підтримка сайту включає в себе цілий комплекс завдань, пов’язаних із забезпеченням стабільної роботи проекту. Додавання нового контенту та нових розділів і т.д.</p>
+								</div>
+								<div class="item-offer__labels">
+									<div class="item-offer__label">
+										Мінімальний термін: 1 місяць
+									</div>
+									<div class="item-offer__label">
+										Вартість: від 100 $
+									</div>
+								</div>
+								<button type="button" class="item-offer__button button">
+									Хочу такий сайт
+								</button>
+							</div>
+							<div class="item-offer__icon">
+								<img src="img/offer/05.svg" alt="Image">
+							</div>
+						</article>
+					</div>
+				</div>
+			</section>
 		</main>
 		<footer class="footer">
 			<div class="footer__container">
 			</div>
 		</footer>
 	</div>
-	<script src="js/app.min.js?_v=20240430121258"></script>
+	<script src="js/app.min.js?_v=20240501190505"></script>
 </body>
 
 </html>

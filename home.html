@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20240501201324">
+	<link rel="stylesheet" href="css/style.min.css?_v=20240502102614">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,9 +20,9 @@
 				<div class="header__menu menu">
 					<nav class="menu__body">
 						<ul class="menu__list">
-							<li class="menu__item"><a href="" class="menu__link">Про нас</a></li>
-							<li class="menu__item"><a href="" class="menu__link">Кейси</a></li>
-							<li class="menu__item"><a href="" class="menu__link">Послуги</a></li>
+							<li class="menu__item"><a href="" class="menu__link" data-goto=".why" data-goto-header>Про нас</a></li>
+							<li class="menu__item"><a href="" class="menu__link" data-goto=".cases" data-goto-header>Кейси</a></li>
+							<li class="menu__item"><a href="" class="menu__link" data-goto=".offer" data-goto-header>Послуги</a></li>
 							<li class="menu__item"><a href="" class="menu__link">Як ми працюємо?</a></li>
 							<li class="menu__item"><a href="" class="menu__link">Відгуки</a></li>
 							<li class="menu__item"><a href="" class="menu__link">FAQ</a></li>
@@ -75,7 +75,7 @@
 							<div class="hero__text">
 								Натискайте, якщо хочете обігнати конкурентів
 							</div>
-							<div class="hero__button  button-calc">
+							<div class="hero__button button-calc">
 								Розрахувати вартість
 								<svg class="hero__circle circle" xmlns="http://www.w3.org/2000/svg" width="178" height="178" fill="none" viewBox="0 0 178 178">
 									<g filter="url(#a)">
@@ -170,20 +170,32 @@
 					</div>
 					<div class="why__items" data-watch data-watch-once>
 						<div class="why__item item-why">
-							<div class="item-why__number"><span data-digits-counter data-digits-counter-speed="5000">350</span>+</div>
+							<div class="item-why__number">
+								<span data-digits-counter data-digits-counter-speed="5000">350</span>+
+							</div>
 							<div class="item-why__text">реалізованих проектів</div>
 						</div>
 						<div class="why__item item-why">
-							<div class="item-why__number"><span data-digits-counter data-digits-counter-speed="3000">7</span>+</div>
-							<div class="item-why__text">років досвіду у WEB розробці</div>
+							<div class="item-why__number">
+								<span data-digits-counter data-digits-counter-speed="3000">7</span>+
+							</div>
+							<div class="item-why__text">
+								років досвіду у WEB розробці
+							</div>
 						</div>
 						<div class="why__item item-why">
-							<div class="item-why__number"><span data-digits-counter data-digits-counter-speed="4000">94</span>%</div>
+							<div class="item-why__number">
+								<span data-digits-counter data-digits-counter-speed="4000">94</span>%
+							</div>
 							<div class="item-why__text">задоволених клієнтів</div>
 						</div>
 						<div class="why__item item-why">
-							<div class="item-why__number"><span data-digits-counter data-digits-counter-speed="2000">5</span></div>
-							<div class="item-why__text">фахівців у різних напрямках</div>
+							<div class="item-why__number">
+								<span data-digits-counter data-digits-counter-speed="2000">5</span>
+							</div>
+							<div class="item-why__text">
+								фахівців у різних напрямках
+							</div>
 						</div>
 					</div>
 				</div>
@@ -191,26 +203,24 @@
 			<section class="page__request request">
 				<div class="request__container">
 					<div class="request__content">
-						<img class="request__bg request__bg--1" src="img/request/bg_form_1.webp" alt="Image">
-						<img class="request__bg request__bg--2" src="img/request/bg_form_2.webp" alt="Image">
+						<img class="request__bg request__bg--1" src="img/request/bg_form_1.webp" alt="Image" />
+						<img class="request__bg request__bg--2" src="img/request/bg_form_2.webp" alt="Image" />
 						<h2 class="request__title">
 							Залиште заявку та отримайте 
 							<span>гарантований</span> подарунок
 						</h2>
-						<div class="request__text">
-							Подарунок на вибір:
-						</div>
+						<div class="request__text">Подарунок на вибір:</div>
 						<div class="request__presents">
 							<div class="request__present">
-								<img src="img/request/icon_logotype.svg" alt="Icon">
+								<img src="img/request/icon_logotype.svg" alt="Icon" />
 								<span>Розробка логотипу</span>
 							</div>
 							<div class="request__present">
-								<img src="img/request/domain.svg" alt="Icon">
+								<img src="img/request/domain.svg" alt="Icon" />
 								<span>3 місяці хостингу</span>
 							</div>
 							<div class="request__present">
-								<img src="img/request/tech.svg" alt="Icon">
+								<img src="img/request/tech.svg" alt="Icon" />
 								<span>Тех. підтримка 1 місяць</span>
 							</div>
 						</div>
@@ -222,67 +232,72 @@
 						<div class="form-request__items">
 							<div class="form-request__item">
 								<label for="name" class="form-request__label">Ваше ім'я</label>
-								<input id="name" data-required autocomplete="off" type="text" name="name" data-error="Помилка" placeholder="Вкажіть ім'я" class="form-request__input input">
+								<input id="name" data-required autocomplete="off" type="text" name="name" data-error="Помилка" placeholder="Вкажіть ім'я" class="form-request__input input" />
 							</div>
 							<div class="form-request__item">
 								<label for="phone" class="form-request__label">Номер телефону</label>
-								<input id="phone" data-required autocomplete="off" type="text" name="phone" data-error="Помилка" placeholder="Введіть номер телефону" class="form-request__input input">
+								<input id="phone" data-required autocomplete="off" type="text" name="phone" data-error="Помилка" placeholder="Введіть номер телефону" class="form-request__input input" />
 							</div>
 							<div class="form-request__item">
 								<label for="field" class="form-request__label">Сфера діяльності</label>
-								<input id="field" data-required autocomplete="off" type="field" name="name" data-error="Помилка" placeholder="Чим ви займаєтесь?" class="form-request__input input">
+								<input id="field" data-required autocomplete="off" type="field" name="name" data-error="Помилка" placeholder="Чим ви займаєтесь?" class="form-request__input input" />
 							</div>
 						</div>
 						<label for="options" class="form-request__label">Зручний метод зв'язку</label>
 						<div class="form-request__options options" id="options">
 							<div class="options__item">
-								<input id="Telegram" class="options__input" checked type="radio" value="1" name="messenger">
+								<input id="Telegram" class="options__input" checked type="radio" value="1" name="messenger" />
 								<label for="Telegram" class="options__label">
-									<img src="img/request/telegram.svg" alt="Image">
+									<img src="img/request/telegram.svg" alt="Image" />
 									<span class="options__text">Telegram</span>
 								</label>
 							</div>
 							<div class="options__item">
-								<input id="WhatsApp" class="options__input" type="radio" value="2" name="messenger">
+								<input id="WhatsApp" class="options__input" type="radio" value="2" name="messenger" />
 								<label for="WhatsApp" class="options__label options__label--whatsapp">
-									<img src="img/request/whatsapp.svg" alt="Image">
+									<img src="img/request/whatsapp.svg" alt="Image" />
 									<span class="options__text">WhatsApp</span>
 								</label>
 							</div>
 							<div class="options__item">
-								<input id="Viber" class="options__input" type="radio" value="3" name="messenger">
+								<input id="Viber" class="options__input" type="radio" value="3" name="messenger" />
 								<label for="Viber" class="options__label options__label--viber">
-									<img src="img/request/viber.svg" alt="Image">
+									<img src="img/request/viber.svg" alt="Image" />
 									<span class="options__text">Viber</span>
 								</label>
 							</div>
 						</div>
-						<button type="submit" class="form-request__button button">Розрахувати вартість</button>
+						<button type="submit" class="form-request__button button">
+							Розрахувати вартість
+						</button>
 						<div class="form-request__consent">
-							Натискаючи на кнопку я даю згоду на <a href="#">обробку персональних даних</a>
+							Натискаючи на кнопку я даю згоду на
+							<a href="#">обробку персональних даних</a>
 						</div>
 					</form>
 				</div>
 			</section>
 			<section class="page__cases cases">
 				<div class="cases__container">
-					<h2 class="cases__title title">
-						Наші <span>кейси</span>
-					</h2>
+					<h2 class="cases__title title">Наші <span>кейси</span></h2>
 					<div data-tabs class="cases__tabs tabs">
 						<nav data-tabs-titles class="tabs__navigation">
-							<button type="button" class="tabs__title _tab-active">Корпоративний</button>
-							<button type="button" class="tabs__title">Інтернет магазин</button>
-							<button type="button" class="tabs__title">Landing Page</button>
+							<button type="button" class="tabs__title _tab-active">
+								Корпоративний
+							</button>
+							<button type="button" class="tabs__title">
+								Інтернет магазин
+							</button>
+							<button type="button" class="tabs__title">
+								Landing Page
+							</button>
 						</nav>
 						<div data-tabs-body class="tabs__content">
 							<div class="tabs__body">
 								<div class="tabs__items">
 									<div class="tabs__item item-tabs">
 										<div class="item-tabs__content">
-											<h3 class="item-tabs__name">
-												protectlaw
-											</h3>
+											<h3 class="item-tabs__name">protectlaw</h3>
 											<div class="item-tabs__caption">
 												Адвокатське об’єднання “Протекція права”
 											</div>
@@ -301,15 +316,13 @@
 												Дивитись кейс
 											</a>
 										</div>
-										<div class="item-tabs__logo" style="background-color: #6d513e;">
-											<img src="img/cases/logo_protectlaw.svg" alt="Image">
+										<div class="item-tabs__logo" style="background-color: #6d513e">
+											<img src="img/cases/logo_protectlaw.svg" alt="Image" />
 										</div>
 									</div>
 									<div class="tabs__item item-tabs">
 										<div class="item-tabs__content">
-											<h3 class="item-tabs__name">
-												Budowa
-											</h3>
+											<h3 class="item-tabs__name">Budowa</h3>
 											<div class="item-tabs__caption">
 												продаж та доставка будівельних матеріалів
 											</div>
@@ -328,15 +341,13 @@
 												Дивитись кейс
 											</a>
 										</div>
-										<div class="item-tabs__logo" style="background-color: #ff0;">
-											<img src="img/cases/logo_budowa.svg" alt="Image">
+										<div class="item-tabs__logo" style="background-color: #ff0">
+											<img src="img/cases/logo_budowa.svg" alt="Image" />
 										</div>
 									</div>
 									<div class="tabs__item item-tabs">
 										<div class="item-tabs__content">
-											<h3 class="item-tabs__name">
-												tattoo044
-											</h3>
+											<h3 class="item-tabs__name">tattoo044</h3>
 											<div class="item-tabs__caption">
 												мережа тату студій TATTOO044
 											</div>
@@ -355,8 +366,8 @@
 												Дивитись кейс
 											</a>
 										</div>
-										<div class="item-tabs__logo" style="background-color: #383838;">
-											<img src="img/cases/logo_tattoo.svg" alt="Image">
+										<div class="item-tabs__logo" style="background-color: #383838">
+											<img src="img/cases/logo_tattoo.svg" alt="Image" />
 										</div>
 									</div>
 								</div>
@@ -365,9 +376,7 @@
 								<div class="tabs__items">
 									<div class="tabs__item item-tabs">
 										<div class="item-tabs__content">
-											<h3 class="item-tabs__name">
-												Budowa
-											</h3>
+											<h3 class="item-tabs__name">Budowa</h3>
 											<div class="item-tabs__caption">
 												продаж та доставка будівельних матеріалів
 											</div>
@@ -386,15 +395,13 @@
 												Дивитись кейс
 											</a>
 										</div>
-										<div class="item-tabs__logo" style="background-color: #ff0;">
-											<img src="img/cases/logo_budowa.svg" alt="Image">
+										<div class="item-tabs__logo" style="background-color: #ff0">
+											<img src="img/cases/logo_budowa.svg" alt="Image" />
 										</div>
 									</div>
 									<div class="tabs__item item-tabs">
 										<div class="item-tabs__content">
-											<h3 class="item-tabs__name">
-												tattoo044
-											</h3>
+											<h3 class="item-tabs__name">tattoo044</h3>
 											<div class="item-tabs__caption">
 												мережа тату студій TATTOO044
 											</div>
@@ -413,15 +420,13 @@
 												Дивитись кейс
 											</a>
 										</div>
-										<div class="item-tabs__logo" style="background-color: #383838;">
-											<img src="img/cases/logo_tattoo.svg" alt="Image">
+										<div class="item-tabs__logo" style="background-color: #383838">
+											<img src="img/cases/logo_tattoo.svg" alt="Image" />
 										</div>
 									</div>
 									<div class="tabs__item item-tabs">
 										<div class="item-tabs__content">
-											<h3 class="item-tabs__name">
-												protectlaw
-											</h3>
+											<h3 class="item-tabs__name">protectlaw</h3>
 											<div class="item-tabs__caption">
 												Адвокатське об’єднання “Протекція права”
 											</div>
@@ -440,8 +445,8 @@
 												Дивитись кейс
 											</a>
 										</div>
-										<div class="item-tabs__logo" style="background-color: #6d513e;">
-											<img src="img/cases/logo_protectlaw.svg" alt="Image">
+										<div class="item-tabs__logo" style="background-color: #6d513e">
+											<img src="img/cases/logo_protectlaw.svg" alt="Image" />
 										</div>
 									</div>
 								</div>
@@ -450,9 +455,7 @@
 								<div class="tabs__items">
 									<div class="tabs__item item-tabs">
 										<div class="item-tabs__content">
-											<h3 class="item-tabs__name">
-												tattoo044
-											</h3>
+											<h3 class="item-tabs__name">tattoo044</h3>
 											<div class="item-tabs__caption">
 												мережа тату студій TATTOO044
 											</div>
@@ -471,15 +474,13 @@
 												Дивитись кейс
 											</a>
 										</div>
-										<div class="item-tabs__logo" style="background-color: #383838;">
-											<img src="img/cases/logo_tattoo.svg" alt="Image">
+										<div class="item-tabs__logo" style="background-color: #383838">
+											<img src="img/cases/logo_tattoo.svg" alt="Image" />
 										</div>
 									</div>
 									<div class="tabs__item item-tabs">
 										<div class="item-tabs__content">
-											<h3 class="item-tabs__name">
-												protectlaw
-											</h3>
+											<h3 class="item-tabs__name">protectlaw</h3>
 											<div class="item-tabs__caption">
 												Адвокатське об’єднання “Протекція права”
 											</div>
@@ -498,15 +499,13 @@
 												Дивитись кейс
 											</a>
 										</div>
-										<div class="item-tabs__logo" style="background-color: #6d513e;">
-											<img src="img/cases/logo_protectlaw.svg" alt="Image">
+										<div class="item-tabs__logo" style="background-color: #6d513e">
+											<img src="img/cases/logo_protectlaw.svg" alt="Image" />
 										</div>
 									</div>
 									<div class="tabs__item item-tabs">
 										<div class="item-tabs__content">
-											<h3 class="item-tabs__name">
-												Budowa
-											</h3>
+											<h3 class="item-tabs__name">Budowa</h3>
 											<div class="item-tabs__caption">
 												продаж та доставка будівельних матеріалів
 											</div>
@@ -525,8 +524,8 @@
 												Дивитись кейс
 											</a>
 										</div>
-										<div class="item-tabs__logo" style="background-color: #ff0;">
-											<img src="img/cases/logo_budowa.svg" alt="Image">
+										<div class="item-tabs__logo" style="background-color: #ff0">
+											<img src="img/cases/logo_budowa.svg" alt="Image" />
 										</div>
 									</div>
 								</div>
@@ -545,11 +544,13 @@
 					<div class="offer__items">
 						<article class="offer__item item-offer">
 							<div class="item-offer__content">
-								<h4 class="item-offer__name">
-									Корпоративний сайт
-								</h4>
+								<h4 class="item-offer__name">Корпоративний сайт</h4>
 								<div class="item-offer__text">
-									<p>Ефективний рекламний майданчик, який демонструє переваги компанії, залучає користувача, підвищує його лояльність та відданість бренду.</p>
+									<p>
+										Ефективний рекламний майданчик, який демонструє
+										переваги компанії, залучає користувача,
+										підвищує його лояльність та відданість бренду.
+									</p>
 								</div>
 								<div class="item-offer__labels">
 									<div class="item-offer__label">
@@ -564,16 +565,19 @@
 								</button>
 							</div>
 							<div class="item-offer__icon">
-								<img src="img/offer/01.svg" alt="Image">
+								<img src="img/offer/01.svg" alt="Image" />
 							</div>
 						</article>
 						<article class="offer__item item-offer">
 							<div class="item-offer__content">
-								<h4 class="item-offer__name">
-									Сайт-візитка
-								</h4>
+								<h4 class="item-offer__name">Сайт-візитка</h4>
 								<div class="item-offer__text">
-									<p>Роль “обличчя” успішної компанії часто відводять сайту-візитці. На одній або кількох сторінках міститься основна інформація про компанію або приватну особу.</p>
+									<p>
+										Роль “обличчя” успішної компанії часто
+										відводять сайту-візитці. На одній або кількох
+										сторінках міститься основна інформація про
+										компанію або приватну особу.
+									</p>
 								</div>
 								<div class="item-offer__labels">
 									<div class="item-offer__label">
@@ -588,16 +592,18 @@
 								</button>
 							</div>
 							<div class="item-offer__icon">
-								<img src="img/offer/02.svg" alt="Image">
+								<img src="img/offer/02.svg" alt="Image" />
 							</div>
 						</article>
 						<article class="offer__item item-offer">
 							<div class="item-offer__content">
-								<h4 class="item-offer__name">
-									Landing Page
-								</h4>
+								<h4 class="item-offer__name">Landing Page</h4>
 								<div class="item-offer__text">
-									<p>Лендінг – сторінка в інтернеті, розроблена для збору контактних даних, продажу послуг або товарів, створення унікального портфоліо.</p>
+									<p>
+										Лендінг – сторінка в інтернеті, розроблена для
+										збору контактних даних, продажу послуг або
+										товарів, створення унікального портфоліо.
+									</p>
 								</div>
 								<div class="item-offer__labels">
 									<div class="item-offer__label">
@@ -612,16 +618,18 @@
 								</button>
 							</div>
 							<div class="item-offer__icon">
-								<img src="img/offer/03.svg" alt="Image">
+								<img src="img/offer/03.svg" alt="Image" />
 							</div>
 						</article>
 						<article class="offer__item item-offer">
 							<div class="item-offer__content">
-								<h4 class="item-offer__name">
-									Інтернет-магазин
-								</h4>
+								<h4 class="item-offer__name">Інтернет-магазин</h4>
 								<div class="item-offer__text">
-									<p>Інтернет-магазин – це надійний майданчик для розвитку бізнесу в інтернеті. Він дозволяє здійснювати продаж із будь-якої точки світу.</p>
+									<p>
+										Інтернет-магазин – це надійний майданчик для
+										розвитку бізнесу в інтернеті. Він дозволяє
+										здійснювати продаж із будь-якої точки світу.
+									</p>
 								</div>
 								<div class="item-offer__labels">
 									<div class="item-offer__label">
@@ -636,16 +644,19 @@
 								</button>
 							</div>
 							<div class="item-offer__icon">
-								<img src="img/offer/04.svg" alt="Image">
+								<img src="img/offer/04.svg" alt="Image" />
 							</div>
 						</article>
 						<article class="offer__item item-offer">
 							<div class="item-offer__content">
-								<h4 class="item-offer__name">
-									Підтримка сайту
-								</h4>
+								<h4 class="item-offer__name">Підтримка сайту</h4>
 								<div class="item-offer__text">
-									<p>Підтримка сайту включає в себе цілий комплекс завдань, пов’язаних із забезпеченням стабільної роботи проекту. Додавання нового контенту та нових розділів і т.д.</p>
+									<p>
+										Підтримка сайту включає в себе цілий комплекс
+										завдань, пов’язаних із забезпеченням стабільної
+										роботи проекту. Додавання нового контенту та
+										нових розділів і т.д.
+									</p>
 								</div>
 								<div class="item-offer__labels">
 									<div class="item-offer__label">
@@ -660,19 +671,253 @@
 								</button>
 							</div>
 							<div class="item-offer__icon">
-								<img src="img/offer/05.svg" alt="Image">
+								<img src="img/offer/05.svg" alt="Image" />
 							</div>
 						</article>
 					</div>
 				</div>
 			</section>
+			<section class="page__stack stack">
+				<div class="stack__container">
+					<h2 class="stack__title title">
+						Наші
+						<div>технології</div>
+					</h2>
+				</div>
+				<div class="stack__items">
+					<div class="stack__item">
+						<img src="img/stack/icon_php.svg" alt="Image" />
+					</div>
+					<div class="stack__item">
+						<img src="img/stack/icon_html.svg" alt="Image" />
+					</div>
+					<div class="stack__item">
+						<img src="img/stack/icon_sass.svg" alt="Image" />
+					</div>
+					<div class="stack__item">
+						<img src="img/stack/icon_gulp.svg" alt="Image" />
+					</div>
+					<div class="stack__item">
+						<img src="img/stack/icon_javascript.svg" alt="Image" />
+					</div>
+					<div class="stack__item">
+						<img src="img/stack/icon_jquery.svg" alt="Image" />
+					</div>
+					<div class="stack__item">
+						<img src="img/stack/icon_bootstrap.svg" alt="Image" />
+					</div>
+					<div class="stack__item">
+						<img src="img/stack/icon_mysql.svg" alt="Image" />
+					</div>
+					<div class="stack__item">
+						<img src="img/stack/icon_wordpress.svg" alt="Image" />
+					</div>
+				</div>
+			</section>
+			<section class="page__how how">
+				<div class="how__container">
+					<div class="how__title title">
+						Як ми
+						<div>працюємо</div>
+					</div>
+					<ol class="how__list">
+						<li class="how__item item-how">
+							<div class="item-how__head">
+								<div class="item-how__number">01</div>
+							</div>
+							<div class="item-how__body">
+								<div class="item-how__name">Підготовка</div>
+								<div class="item-how__text">
+									<p>
+										Прописуємо цілі, завдання та ідеї сайту,
+										складаємо технічне завдання на розробку
+										корпоративного сайту, оцінюємо вартість
+										розробки сайту та підписуємо договір.
+									</p>
+								</div>
+							</div>
+							<div class="item-how__icon" data-da=".item-how__head, 650">
+								<img src="img/how/01.svg" alt="Image" />
+							</div>
+						</li>
+						<li class="how__item item-how">
+							<div class="item-how__head item-how__head--2">
+								<div class="item-how__number">02</div>
+							</div>
+							<div class="item-how__body">
+								<div class="item-how__name">Базові налаштування</div>
+								<div class="item-how__text">
+									<p>Підбираємо та реєструємо доменне ім’я.</p>
+									<p>Оформлюємо хостинг.</p>
+								</div>
+							</div>
+							<div class="item-how__icon" data-da=".item-how__head--2, 650">
+								<img src="img/how/02.svg" alt="Image" />
+							</div>
+						</li>
+						<li class="how__item item-how">
+							<div class="item-how__head item-how__head--3">
+								<div class="item-how__number">03</div>
+							</div>
+							<div class="item-how__body">
+								<div class="item-how__name">Дизайн сайту</div>
+								<div class="item-how__text">
+									<p>
+										Продумуємо інтерфейс та робимо прототип.
+										Розробляємо макет головної сторінки, погоджуємо
+										та приступаємо до внутрішніх. Погоджуємо весь
+										дизайн сайту.
+									</p>
+								</div>
+							</div>
+							<div class="item-how__icon" data-da=".item-how__head--3, 650">
+								<img src="img/how/03.svg" alt="Image" />
+							</div>
+						</li>
+						<li class="how__item item-how">
+							<div class="item-how__head item-how__head--4">
+								<div class="item-how__number">04</div>
+							</div>
+							<div class="item-how__body">
+								<div class="item-how__name">Адаптивна верстка</div>
+								<div class="item-how__text">
+									<p>
+										Виконуємо кросбраузерну та адаптивну верстку,
+										тестуємо відображення на різних пристроях та
+										погоджуємо, проводимо інтеграцію з
+										адміністративною панеллю.
+									</p>
+								</div>
+							</div>
+							<div class="item-how__icon" data-da=".item-how__head--4, 650">
+								<img src="img/how/04.svg" alt="Image" />
+							</div>
+						</li>
+						<li class="how__item item-how">
+							<div class="item-how__head item-how__head--5">
+								<div class="item-how__number">05</div>
+							</div>
+							<div class="item-how__body">
+								<div class="item-how__name">Наповнення сайту</div>
+								<div class="item-how__text">
+									<p>
+										Створюємо сторінки на підготовленій карті
+										сайту.
+									</p>
+									<p>Наповнюємо сторінки наданим контентом.</p>
+								</div>
+							</div>
+							<div class="item-how__icon" data-da=".item-how__head--5, 650">
+								<img src="img/how/05.svg" alt="Image" />
+							</div>
+						</li>
+						<li class="how__item item-how">
+							<div class="item-how__head item-how__head--6">
+								<div class="item-how__number">06</div>
+							</div>
+							<div class="item-how__body">
+								<div class="item-how__name">
+									Тестування та запуск сайту
+								</div>
+								<div class="item-how__text">
+									<p>
+										Завантажуємо сайт на хостинг, тестуємо
+										функціональність всього сайту.
+									</p>
+									<p>
+										Навчаємо користуванню сайтом та передаємо
+										доступи
+									</p>
+								</div>
+							</div>
+							<div class="item-how__icon" data-da=".item-how__head--6, 650">
+								<img src="img/how/06.svg" alt="Image" />
+							</div>
+						</li>
+						<li class="how__item item-how">
+							<div class="item-how__head item-how__head--7">
+								<div class="item-how__number">07</div>
+							</div>
+							<div class="item-how__body">
+								<div class="item-how__name">
+									Супровід та розвиток
+								</div>
+								<div class="item-how__text">
+									<p>
+										Гарантійний безкоштовний період супроводу
+										протягом 14 днів.
+									</p>
+									<p>
+										Якщо буде потреба, підписуємо договір на
+										постійний супровід та розвиток.
+									</p>
+								</div>
+							</div>
+							<div class="item-how__icon" data-da=".item-how__head--7, 650">
+								<img src="img/how/07.svg" alt="Image" />
+							</div>
+						</li>
+					</ol>
+				</div>
+			</section>
+			<div class="running-text">
+				<p class="running-text__connects">
+					<span class="running-text__line">&nbsp;siteost AGENCY siteost AGENCY siteost AGENCY siteost
+						AGENCY siteost AGENCY
+					</span>
+					<span class="running-text__line">&nbsp;siteost AGENCY siteost AGENCY siteost AGENCY siteost
+						AGENCY siteost AGENCY
+						&nbsp;
+					</span>
+				</p>
+			</div>
 		</main>
 		<footer class="footer">
 			<div class="footer__container">
+				<div class="footer__head">
+					<a href="home.html" class="footer__logo"><img src="img/logo.svg" alt=""></a>
+					<ul class="footer__menu menu-footer">
+						<li class="menu-footer__item"><a href="" class="menu-footer__link">Про нас</a></li>
+						<li class="menu-footer__item"><a href="" class="menu-footer__link">Кейси</a></li>
+						<li class="menu-footer__item"><a href="" class="menu-footer__link">Послуги</a></li>
+						<li class="menu-footer__item"><a href="" class="menu-footer__link">Як ми працюємо?</a></li>
+						<li class="menu-footer__item"><a href="" class="menu-footer__link">FAQ</a></li>
+						<li class="menu-footer__item"><a href="" class="menu-footer__link">Контакти</a></li>
+					</ul>
+				</div>
+				<ul class="footer__contacts">
+					<div class="footer__social social-footer">
+						<a href="" class="social-footer__link">
+							<img src="img/social/telegram.svg" alt="Image">
+							Telegram
+						</a>
+						<a href="" class="social-footer__link">
+							<img src="img/social/WhatsApp.svg" alt="Image">
+							WhatsApp
+						</a>
+						<a href="" class="social-footer__link">
+							<img src="img/social/viber.svg" alt="Image">
+							Viber
+						</a>
+					</div>
+					<div class="footer__links">
+						<a href="tel:+380679707979" class="footer__link">+380 (67) 970 79 79</a>
+						<a href="mailto:sale@siteost.com" class="footer__link">sale@siteost.com</a>
+					</div>
+				</ul>
+			</div>
+			<div class="footer__bottom bottom-footer">
+				<div class="bottom-footer__links">
+					<a href="" class="bottom-footer__link">Політика конфіденційності</a>
+					<a href="" class="bottom-footer__link">Договір публічної оферти</a>
+				</div>
+				<div class="bottom-footer__copy">
+					© 2023 — siteost
+				</div>
 			</div>
 		</footer>
 	</div>
-	<script src="js/app.min.js?_v=20240501201324"></script>
+	<script src="js/app.min.js?_v=20240502102614"></script>
 </body>
 
 </html>

@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20240503154939">
+	<link rel="stylesheet" href="css/style.min.css?_v=20240503202837">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,10 +23,10 @@
 							<li class="menu__item"><a href="" class="menu__link" data-goto=".why" data-goto-header>Про нас</a></li>
 							<li class="menu__item"><a href="" class="menu__link" data-goto=".cases" data-goto-header>Кейси</a></li>
 							<li class="menu__item"><a href="" class="menu__link" data-goto=".offer" data-goto-header>Послуги</a></li>
-							<li class="menu__item"><a href="" class="menu__link">Як ми працюємо?</a></li>
-							<li class="menu__item"><a href="" class="menu__link">Відгуки</a></li>
-							<li class="menu__item"><a href="" class="menu__link">FAQ</a></li>
-							<li class="menu__item"><a href="" class="menu__link">Контакти</a></li>
+							<li class="menu__item"><a href="" class="menu__link" data-goto=".how" data-goto-header>Як ми працюємо?</a></li>
+							<li class="menu__item"><a href="" class="menu__link" data-goto=".feedback" data-goto-header>Відгуки</a></li>
+							<li class="menu__item"><a href="" class="menu__link" data-goto=".questions" data-goto-header>FAQ</a></li>
+							<li class="menu__item"><a href="" class="menu__link" data-goto=".footer">Контакти</a></li>
 						</ul>
 						<div class="header__button button-calc">
 							Розрахувати вартість
@@ -949,10 +949,10 @@
 			</section>
 			<div class="running-tape">
 				<p class="running-tape__connects">
-					<span class="running-tape__line">&nbsp;siteost AGENCY siteost AGENCY siteost AGENCY siteost
-						AGENCY siteost AGENCY
+					<span class="running-tape__line running-tape__line--text">&nbsp;siteost AGENCY siteost AGENCY siteost AGENCY siteost
+						AGENCY siteost AGENCY&nbsp;
 					</span>
-					<span class="running-tape__line">&nbsp;siteost AGENCY siteost AGENCY siteost AGENCY siteost
+					<span class="running-tape__line running-tape__line--text">&nbsp;siteost AGENCY siteost AGENCY siteost AGENCY siteost
 						AGENCY siteost AGENCY &nbsp;
 					</span>
 				</p>
@@ -1049,7 +1049,7 @@
 						</nav>
 						<div data-tabs-body class="tabs__content">
 							<div class="tabs__body">
-								<div class="feedback__slider swiper">
+								<div class="feedback__slider feedback__slider--text swiper">
 									<div class="feedback__wrapper swiper-wrapper">
 										<div class="feedback__slide swiper-slide slide-feedback">
 											<div class="slide-feedback__text">
@@ -1132,8 +1132,8 @@
 										<div class="feedback__slide swiper-slide slide-feedback">
 											<div class="slide-feedback__video">
 												<div class="video-container" id="video-container">
-													<video id="video" preload="metadata" poster="//cdn.jsdelivr.net/npm/big-buck-bunny-1080p@0.0.6/poster.webp">
-														<source src="//cdn.jsdelivr.net/npm/big-buck-bunny-1080p@0.0.6/video.mp4" type="video/mp4" />
+													<video id="video" preload="metadata" poster="img/video_bg.webp">
+														<source data-src="//cdn.jsdelivr.net/npm/big-buck-bunny-1080p@0.0.6/video.mp4" type="video/mp4" />
 													</video>
 
 													<div class="play-button-wrapper">
@@ -1160,8 +1160,8 @@
 										<div class="feedback__slide swiper-slide slide-feedback">
 											<div class="slide-feedback__video">
 												<div class="video-container" id="video-container">
-													<video id="video" preload="metadata" poster="//cdn.jsdelivr.net/npm/big-buck-bunny-1080p@0.0.6/poster.webp">
-														<source src="//cdn.jsdelivr.net/npm/big-buck-bunny-1080p@0.0.6/video.mp4" type="video/mp4" />
+													<video id="video" preload="metadata" poster="img/video_bg.webp">
+														<source data-src="//cdn.jsdelivr.net/npm/big-buck-bunny-1080p@0.0.6/video.mp4" type="video/mp4" />
 													</video>
 
 													<div class="play-button-wrapper">
@@ -1188,8 +1188,8 @@
 										<div class="feedback__slide swiper-slide slide-feedback">
 											<div class="slide-feedback__video">
 												<div class="video-container" id="video-container">
-													<video id="video" preload="metadata" poster="//cdn.jsdelivr.net/npm/big-buck-bunny-1080p@0.0.6/poster.webp">
-														<source src="//cdn.jsdelivr.net/npm/big-buck-bunny-1080p@0.0.6/video.mp4" type="video/mp4" />
+													<video id="video" preload="metadata" poster="img/video_bg.webp">
+														<source data-src="//cdn.jsdelivr.net/npm/big-buck-bunny-1080p@0.0.6/video.mp4" type="video/mp4" />
 													</video>
 
 													<div class="play-button-wrapper">
@@ -1256,6 +1256,9 @@
 							<div class="spollers__body">Замовити розробку сайту Ви можете, якщо зателефонуєте за вказаним номером телефону на нашому сайті, або ж у зручному для Вас месенджері. Обговоримо Вашу ідею та реалізуємо проект будь-якої складності!</div>
 						</details>
 					</div>
+					<button type="button" class="questions__button button button--light">
+						Задати своє питання
+					</button>
 				</div>
 			</section>
 		</main>
@@ -1264,12 +1267,12 @@
 				<div class="footer__head">
 					<a href="home.html" class="footer__logo"><img src="img/logo.svg" alt=""></a>
 					<ul class="footer__menu menu-footer">
-						<li class="menu-footer__item"><a href="" class="menu-footer__link">Про нас</a></li>
-						<li class="menu-footer__item"><a href="" class="menu-footer__link">Кейси</a></li>
-						<li class="menu-footer__item"><a href="" class="menu-footer__link">Послуги</a></li>
-						<li class="menu-footer__item"><a href="" class="menu-footer__link">Як ми працюємо?</a></li>
-						<li class="menu-footer__item"><a href="" class="menu-footer__link">FAQ</a></li>
-						<li class="menu-footer__item"><a href="" class="menu-footer__link">Контакти</a></li>
+						<li class="menu-footer__item"><a href="" class="menu-footer__link" data-goto=".why" data-goto-header>Про нас</a></li>
+						<li class="menu-footer__item"><a href="" class="menu-footer__link" data-goto=".cases" data-goto-header>Кейси</a></li>
+						<li class="menu-footer__item"><a href="" class="menu-footer__link" data-goto=".offer" data-goto-header>Послуги</a></li>
+						<li class="menu-footer__item"><a href="" class="menu-footer__link" data-goto=".how" data-goto-header>Як ми працюємо?</a></li>
+						<li class="menu-footer__item"><a href="" class="menu-footer__link" data-goto=".questions" data-goto-header>FAQ</a></li>
+						<li class="menu-footer__item"><a href="" class="menu-footer__link" data-goto=".footer">Контакти</a></li>
 					</ul>
 				</div>
 				<ul class="footer__contacts">
@@ -1280,7 +1283,7 @@
 						</a>
 						<a href="" class="social-footer__link">
 							<img src="img/social/WhatsApp.svg" alt="Image">
-							WhatsApp
+							<span>WhatsApp</span>
 						</a>
 						<a href="" class="social-footer__link">
 							<img src="img/social/viber.svg" alt="Image">
@@ -1304,7 +1307,7 @@
 			</div>
 		</footer>
 	</div>
-	<script src="js/app.min.js?_v=20240503154939"></script>
+	<script src="js/app.min.js?_v=20240503202837"></script>
 </body>
 
 </html>

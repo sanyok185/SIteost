@@ -593,6 +593,11 @@ textarea.input {
   justify-content: center;
   align-items: center
 }
+.title__green-bg span {
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
 .title__green {
   vertical-align: middle;
   text-align: center;

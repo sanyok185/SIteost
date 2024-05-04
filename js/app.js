@@ -4613,37 +4613,29 @@
         da.init();
         document.addEventListener("DOMContentLoaded", (function() {
             var playButtons = document.querySelectorAll(".play-gif");
-            var videos = document.querySelectorAll(".video-container video");
-            var currentlyPlayingVideo = null;
-            playButtons.forEach((function(playButton, index) {
+            playButtons.forEach((function(playButton) {
                 playButton.addEventListener("click", (function(event) {
                     var videoContainer = playButton.closest(".video-container");
                     var video = videoContainer.querySelector("video");
-                    if (currentlyPlayingVideo && currentlyPlayingVideo !== video) {
-                        currentlyPlayingVideo.pause();
-                        var prevVideoContainer = currentlyPlayingVideo.closest(".video-container");
-                        var prevPlayButton = prevVideoContainer.querySelector(".play-gif");
-                        prevPlayButton.style.display = "flex";
-                        currentlyPlayingVideo.setAttribute("poster", "@img/video_bg.png");
-                    }
                     if (video.paused) {
                         playButton.style.display = "none";
                         video.setAttribute("poster", "");
                         video.play();
                     } else {
                         playButton.style.display = "flex";
-                        video.setAttribute("poster", "@img/video_bg.png");
                         video.pause();
+                        video.setAttribute("poster", "@img/video_bg.png");
                     }
-                    currentlyPlayingVideo = video.paused ? null : video;
                 }));
-                var video = videos[index];
+            }));
+            var videos = document.querySelectorAll(".video-container video");
+            videos.forEach((function(video) {
                 video.addEventListener("click", (function() {
+                    var container = video.closest(".video-container");
+                    var playButton = container.querySelector(".play-gif");
                     if (!video.paused) {
                         video.pause();
                         video.setAttribute("poster", "@img/video_bg.png");
-                        var container = video.closest(".video-container");
-                        var playButton = container.querySelector(".play-gif");
                         playButton.style.display = "flex";
                     }
                 }));

@@ -4611,34 +4611,32 @@
         }
         const da = new DynamicAdapt("max");
         da.init();
-        document.addEventListener("DOMContentLoaded", (function() {
-            var playButtons = document.querySelectorAll(".play-gif");
-            playButtons.forEach((function(playButton) {
-                playButton.addEventListener("click", (function(event) {
-                    var videoContainer = playButton.closest(".video-container");
-                    var video = videoContainer.querySelector("video");
-                    if (video.paused) {
-                        playButton.style.display = "none";
-                        video.setAttribute("poster", "");
-                        video.play();
-                    } else {
-                        playButton.style.display = "flex";
-                        video.pause();
-                        video.setAttribute("poster", "@img/video_bg.png");
-                    }
-                }));
+        var playButtons = document.querySelectorAll(".play-gif");
+        playButtons.forEach((function(playButton) {
+            playButton.addEventListener("click", (function(event) {
+                var videoContainer = playButton.closest(".video-container");
+                var video = videoContainer.querySelector("video");
+                if (video.paused) {
+                    playButton.style.display = "none";
+                    video.setAttribute("poster", "");
+                    video.play();
+                } else {
+                    playButton.style.display = "flex";
+                    video.pause();
+                    video.setAttribute("poster", "@img/video_bg.png");
+                }
             }));
-            var videos = document.querySelectorAll(".video-container video");
-            videos.forEach((function(video) {
-                video.addEventListener("click", (function() {
-                    var container = video.closest(".video-container");
-                    var playButton = container.querySelector(".play-gif");
-                    if (!video.paused) {
-                        video.pause();
-                        video.setAttribute("poster", "@img/video_bg.png");
-                        playButton.style.display = "flex";
-                    }
-                }));
+        }));
+        var videos = document.querySelectorAll(".video-container video");
+        videos.forEach((function(video) {
+            video.addEventListener("click", (function() {
+                var container = video.closest(".video-container");
+                var playButton = container.querySelector(".play-gif");
+                if (!video.paused) {
+                    video.pause();
+                    video.setAttribute("poster", "@img/video_bg.png");
+                    playButton.style.display = "flex";
+                }
             }));
         }));
         let animation = document.querySelector(".hero__animation video");

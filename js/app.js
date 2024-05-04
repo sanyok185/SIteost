@@ -4308,7 +4308,7 @@
                 autoHeight: true,
                 speed: 800,
                 navigation: {
-                    prevEl: "feedback__slider--video .swiper-button-prev",
+                    prevEl: ".feedback__slider--video .swiper-button-prev",
                     nextEl: ".feedback__slider--video .swiper-button-next"
                 },
                 breakpoints: {
@@ -4612,18 +4612,51 @@
         }
         const da = new DynamicAdapt("max");
         da.init();
-        const video = document.getElementById("video");
-        const circlePlayButton = document.getElementById("circle-play-b");
-        function togglePlay() {
-            if (video.paused || video.ended) video.play(); else video.pause();
-        }
-        circlePlayButton.addEventListener("click", togglePlay);
-        video.addEventListener("playing", (function() {
-            circlePlayButton.style.opacity = 0;
+        document.addEventListener("DOMContentLoaded", (function() {
+            var playButtons = document.querySelectorAll(".play-gif");
+            var videos = document.querySelectorAll(".video-container video");
+            var currentlyPlayingVideo = null;
+            playButtons.forEach((function(playButton, index) {
+                playButton.addEventListener("click", (function(event) {
+                    var videoContainer = playButton.closest(".video-container");
+                    var video = videoContainer.querySelector("video");
+                    if (currentlyPlayingVideo && currentlyPlayingVideo !== video) {
+                        currentlyPlayingVideo.pause();
+                        var prevVideoContainer = currentlyPlayingVideo.closest(".video-container");
+                        var prevPlayButton = prevVideoContainer.querySelector(".play-gif");
+                        prevPlayButton.style.display = "flex";
+                        currentlyPlayingVideo.setAttribute("poster", "@img/video_bg.png");
+                    }
+                    video.setAttribute("poster", "");
+                    playButton.style.display = "none";
+                    video.play();
+                    currentlyPlayingVideo = video;
+                }));
+                var video = videos[index];
+                video.addEventListener("click", (function() {
+                    if (!video.paused) {
+                        video.pause();
+                        var container = video.closest(".video-container");
+                        var playButton = container.querySelector(".play-gif");
+                        playButton.style.display = "flex";
+                        video.setAttribute("poster", "@img/video_bg.png");
+                    }
+                }));
+                video.addEventListener("play", (function() {
+                    if (currentlyPlayingVideo && currentlyPlayingVideo !== video) {
+                        currentlyPlayingVideo.stop();
+                        var prevVideoContainer = currentlyPlayingVideo.closest(".video-container");
+                        var prevPlayButton = prevVideoContainer.querySelector(".play-gif");
+                        prevPlayButton.style.display = "flex";
+                        currentlyPlayingVideo.setAttribute("poster", "@img/video_bg.png");
+                    }
+                    currentlyPlayingVideo = video;
+                }));
+            }));
         }));
-        video.addEventListener("pause", (function() {
-            circlePlayButton.style.opacity = 1;
-        }));
+        let animation = document.querySelector(".hero__animation video");
+        animation.muted = true;
+        animation.play();
         window["FLS"] = true;
         menuInit();
         spollers();

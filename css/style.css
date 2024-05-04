@@ -591,10 +591,7 @@ textarea.input {
   border-radius: .625rem;
   padding: .125rem .9375rem!important;
   background-color: #b2fd53;
-  color: #000;
-  display: flex;
-  justify-content: center;
-  align-items: center
+  color: #000
 }
 .title__green {
   vertical-align: middle;

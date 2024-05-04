@@ -564,9 +564,11 @@ textarea.input {
   object-fit: contain
 }
 .title {
-  vertical-align: middle;
   font-weight: 900;
   line-height: 1.2;
+  display: flex;
+  gap: .3125rem;
+  flex-direction: column;
   text-transform: uppercase;
   color: #fff
 }
@@ -579,8 +581,7 @@ textarea.input {
   border-radius: .625rem;
   padding: 0 .9375rem;
   background-color: #b2fd53;
-  color: #000;
-  margin-top: .3125rem
+  color: #000
 }
 .title__green {
   vertical-align: middle;
@@ -588,7 +589,7 @@ textarea.input {
   line-height: 1;
   position: relative;
   z-index: 2;
-  padding: .125rem .9375rem;
+  padding: 0 .9375rem;
   border-radius: .625rem;
   background-color: #b2fd53;
   display: inline-block!important;

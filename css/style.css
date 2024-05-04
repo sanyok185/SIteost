@@ -1988,6 +1988,9 @@ textarea.input {
     line-height: 1.57143
   }
   .hero__animation {
+    transition: all .5s 4s
+  }
+  .hero__animation {
     position: absolute;
     right: 0;
     bottom: .625rem

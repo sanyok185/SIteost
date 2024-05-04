@@ -417,8 +417,8 @@ textarea.input {
 }
 ._spoller-init .spollers__title::before {
   top: 50%;
-  -webkit-transform: rotate(90deg);
-  transform: rotate(90deg)
+  -webkit-transform: rotate(90deg) translate3d(0,0,0);
+  transform: rotate(90deg) translate3d(0,0,0)
 }
 ._spoller-init .spollers__title::after {
   top: 50%
@@ -427,8 +427,8 @@ textarea.input {
   border-radius: .625rem .625rem 0 0
 }
 ._spoller-init .spollers__title._spoller-active::before {
-  -webkit-transform: rotate(-180deg);
-  transform: rotate(-180deg)
+  -webkit-transform: rotate(-180deg) translate3d(0,0,0);
+  transform: rotate(-180deg) translate3d(0,0,0)
 }
 ._spoller-init .spollers__title._spoller-active::after,
 ._spoller-init .spollers__title._spoller-active::before {
@@ -564,6 +564,7 @@ textarea.input {
   object-fit: contain
 }
 .title {
+  vertical-align: middle;
   font-weight: 900;
   line-height: 1.2;
   text-transform: uppercase;
@@ -573,9 +574,12 @@ textarea.input {
   color: #000
 }
 .title div {
-  display: grid;
-  justify-items: center;
+  vertical-align: middle;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
+  text-align: center;
   border-radius: .625rem;
   padding: 0 .9375rem;
   background-color: #b2fd53;
@@ -583,15 +587,18 @@ textarea.input {
   margin-top: .3125rem
 }
 .title__green {
+  vertical-align: middle;
+  text-align: center;
   line-height: 1;
   position: relative;
   z-index: 2;
   padding: .125rem .9375rem;
   border-radius: .625rem;
   background-color: #b2fd53;
-  display: inline-grid!important;
+  display: inline-flex!important;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
+  flex-direction: column;
   text-align: center
 }
 .title__green svg {
@@ -602,29 +609,6 @@ textarea.input {
 }
 .title span {
   color: #b2fd53
-}
-.button-calc {
-  border: 5px solid #b2fd53;
-  position: relative;
-  cursor: pointer;
-  color: #16171a;
-  padding: .9375rem 1.875rem;
-  background-color: #b2fd53;
-  border-radius: 6.25rem;
-  font-weight: 600
-}
-.button-calc:active {
-  box-shadow: 0 4px 50px 0 rgba(178,253,83,.65)
-}
-.circle {
-  position: absolute;
-  top: 50%;
-  -webkit-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
-  left: 50%;
-  z-index: -1;
-  -webkit-animation: rotate 25s linear infinite;
-  animation: rotate 25s linear infinite
 }
 .button {
   display: flex;
@@ -950,24 +934,6 @@ textarea.input {
   -webkit-transform: translate(0,0);
   transform: translate(0,0)
 }
-.hero__button {
-  opacity: 0;
-  transition: left 2s 2.5s,opacity 2s 2.5s,box-shadow .3s;
-  left: 3.125rem
-}
-.hero__button._watcher-view {
-  opacity: 1;
-  left: 0
-}
-.hero__button svg {
-  opacity: 0;
-  transition: all 2s 4.5s;
-  visibility: hidden
-}
-.hero__button svg._watcher-view {
-  opacity: 1;
-  visibility: visible
-}
 .hero__animation {
   position: relative;
   z-index: -1;
@@ -977,6 +943,43 @@ textarea.input {
 .hero__animation video {
   width: 100%;
   height: 100%
+}
+.button-calc {
+  opacity: 0;
+  transition: left 2s 2.5s,opacity 2s 2.5s,box-shadow .3s;
+  left: 3.125rem;
+  border: 5px solid #b2fd53;
+  position: relative;
+  cursor: pointer;
+  color: #16171a;
+  padding: .9375rem 1.875rem;
+  background-color: #b2fd53;
+  border-radius: 6.25rem;
+  font-weight: 600
+}
+.button-calc._watcher-view {
+  opacity: 1;
+  left: 0
+}
+.button-calc:active {
+  box-shadow: 0 4px 50px 0 rgba(178,253,83,.65)
+}
+.circle {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  left: 50%;
+  z-index: -1;
+  -webkit-animation: rotate 25s linear infinite;
+  animation: rotate 25s linear infinite;
+  opacity: 0;
+  transition: all 2s 4.5s;
+  visibility: hidden
+}
+.circle._watcher-view {
+  opacity: 1;
+  visibility: visible
 }
 @-webkit-keyframes rotate {
   from {
@@ -1561,9 +1564,6 @@ textarea.input {
   .title__green {
     height: 4.375rem
   }
-  .button-calc {
-    font-size: 1.5rem
-  }
   .running-tape {
     margin-bottom: 2.5rem
   }
@@ -1620,6 +1620,9 @@ textarea.input {
   }
   .hero__animation {
     left: 1.875rem
+  }
+  .button-calc {
+    font-size: 1.5rem
   }
   .why__text {
     font-size: 1.5rem
@@ -1742,11 +1745,11 @@ textarea.input {
   .spollers__body {
     font-size: .875rem
   }
-  .button-calc {
-    padding: .75rem 1.0625rem
-  }
   .footer__social {
     gap: .625rem
+  }
+  .button-calc {
+    padding: .75rem 1.0625rem
   }
   .feedback__navigation {
     gap: .9375rem
@@ -1755,9 +1758,6 @@ textarea.input {
 @media (max-width:20em) {
   .title__green {
     height: 2.5rem
-  }
-  .button-calc {
-    font-size: 1.25rem
   }
   .header__container {
     gap: 1.5625rem
@@ -1803,6 +1803,9 @@ textarea.input {
   }
   .hero__animation {
     width: 7.1875rem
+  }
+  .button-calc {
+    font-size: 1.25rem
   }
   .why__text {
     font-size: 1.125rem
@@ -1963,9 +1966,6 @@ textarea.input {
   .title__green {
     padding: .1875rem .75rem
   }
-  .button-calc {
-    padding: .8125rem 1.5625rem
-  }
   .menu-open .icon-menu::after,
   .menu-open .icon-menu::before {
     height: .1rem
@@ -1990,6 +1990,9 @@ textarea.input {
     position: absolute;
     right: 0;
     bottom: .625rem
+  }
+  .button-calc {
+    padding: .8125rem 1.5625rem
   }
   .why__image {
     bottom: -.0625rem
@@ -2515,16 +2518,6 @@ textarea.input {
       height: calc(2.5rem + 1.875 * (100vw - 20rem)/ 55.625)
     }
   }
-  @supports (font-size:clamp(1.25rem ,1.1601123596rem + 0.4494382022vw ,1.5rem)) {
-    .button-calc {
-      font-size: clamp(1.25rem ,1.1601123596rem + .4494382022vw ,1.5rem)
-    }
-  }
-  @supports not (font-size:clamp(1.25rem ,1.1601123596rem + 0.4494382022vw ,1.5rem)) {
-    .button-calc {
-      font-size: calc(1.25rem + .25 * (100vw - 20rem)/ 55.625)
-    }
-  }
   @supports (gap:clamp(1.5625rem ,1.4501404494rem + 0.5617977528vw ,1.875rem)) {
     .header__container {
       gap: clamp(1.5625rem ,1.4501404494rem + .5617977528vw ,1.875rem)
@@ -2673,6 +2666,16 @@ textarea.input {
   @supports not (width:clamp(7.1875rem ,-0.1158707865rem + 36.5168539326vw ,27.5rem)) {
     .hero__animation {
       width: calc(7.1875rem + 20.3125 * (100vw - 20rem)/ 55.625)
+    }
+  }
+  @supports (font-size:clamp(1.25rem ,1.1601123596rem + 0.4494382022vw ,1.5rem)) {
+    .button-calc {
+      font-size: clamp(1.25rem ,1.1601123596rem + .4494382022vw ,1.5rem)
+    }
+  }
+  @supports not (font-size:clamp(1.25rem ,1.1601123596rem + 0.4494382022vw ,1.5rem)) {
+    .button-calc {
+      font-size: calc(1.25rem + .25 * (100vw - 20rem)/ 55.625)
     }
   }
   @supports (font-size:clamp(1.125rem ,0.9901685393rem + 0.6741573034vw ,1.5rem)) {
@@ -2906,9 +2909,6 @@ textarea.input {
   .tabs__title:hover {
     background-color: rgba(179,253,83,.3)
   }
-  .button-calc:hover {
-    box-shadow: 0 4px 50px 0 rgba(178,253,83,.65)
-  }
   .button:hover {
     -webkit-transform: translateY(-3px);
     transform: translateY(-3px);
@@ -2955,6 +2955,9 @@ textarea.input {
   .menu-footer__link:hover {
     background-color: #b2fd53;
     color: #000
+  }
+  .button-calc:hover {
+    box-shadow: 0 4px 50px 0 rgba(178,253,83,.65)
   }
   .item-how__number:hover {
     color: rgba(179,253,83,.693)

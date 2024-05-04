@@ -4631,7 +4631,11 @@
                     if (video.paused) {
                         playButton.style.display = "none";
                         video.setAttribute("poster", "");
-                        video.play();
+                        var playPromise = video.play();
+                        if (playPromise !== void 0) playPromise.then((function() {})).catch((function(error) {
+                            video.addEventListener("click", startPlayback);
+                            video.addEventListener("touchstart", startPlayback);
+                        }));
                     } else {
                         playButton.style.display = "flex";
                         video.setAttribute("poster", "@img/video_bg.png");
@@ -4650,6 +4654,12 @@
                     }
                 }));
             }));
+            function startPlayback(event) {
+                var video = event.target;
+                video.play();
+                video.removeEventListener("click", startPlayback);
+                video.removeEventListener("touchstart", startPlayback);
+            }
         }));
         let animation = document.querySelector(".hero__animation video");
         animation.muted = true;

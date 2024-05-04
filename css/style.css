@@ -586,7 +586,7 @@ textarea.input {
   vertical-align: middle;
   text-align: center;
   border-radius: .625rem;
-  padding: 0 .9375rem;
+  padding: .125rem .9375rem;
   background-color: #b2fd53;
   color: #000;
   display: flex;
@@ -1573,9 +1573,6 @@ textarea.input {
   .item-tabs__labels:not(:last-child) {
     margin-bottom: 2.5rem
   }
-  .title__green-bg {
-    line-height: 4.375rem
-  }
   .title__green {
     height: 4.375rem
   }
@@ -2125,9 +2122,6 @@ textarea.input {
   .item-tabs__labels:not(:last-child) {
     margin-bottom: .9375rem
   }
-  .title__green-bg {
-    line-height: 3.5625rem
-  }
   .running-tape {
     margin-bottom: 1.875rem
   }
@@ -2278,16 +2272,6 @@ textarea.input {
   @supports not (margin-bottom:clamp(0.9375rem ,0.0253599476rem + 3.2722513089vw ,2.5rem)) {
     .item-tabs__labels:not(:last-child) {
       margin-bottom: calc(.9375rem + 1.5625 * (100vw - 27.875rem)/ 47.75)
-    }
-  }
-  @supports (line-height:clamp(3.5625rem ,3.0881871728rem + 1.7015706806vw ,4.375rem)) {
-    .title__green-bg {
-      line-height: clamp(3.5625rem ,3.0881871728rem + 1.7015706806vw ,4.375rem)
-    }
-  }
-  @supports not (line-height:clamp(3.5625rem ,3.0881871728rem + 1.7015706806vw ,4.375rem)) {
-    .title__green-bg {
-      line-height: calc(3.5625rem + .8125 * (100vw - 27.875rem)/ 47.75)
     }
   }
   @supports (margin-bottom:clamp(1.875rem ,1.5101439791rem + 1.3089005236vw ,2.5rem)) {

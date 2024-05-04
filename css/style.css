@@ -566,6 +566,9 @@ textarea.input {
 .title {
   font-weight: 900;
   line-height: 1.4;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
   text-transform: uppercase;
   color: #fff;
   opacity: 0;
@@ -581,9 +584,6 @@ textarea.input {
   -webkit-transform: translate(0,0);
   transform: translate(0,0)
 }
-.title div {
-  padding: .125rem 0
-}
 .title__green-bg {
   line-height: 1.16;
   vertical-align: middle;
@@ -591,7 +591,10 @@ textarea.input {
   border-radius: .625rem;
   padding: .125rem .9375rem!important;
   background-color: #b2fd53;
-  color: #000
+  color: #000;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center
 }
 .title__green {
   vertical-align: middle;
@@ -599,7 +602,7 @@ textarea.input {
   line-height: 1;
   position: relative;
   z-index: 2;
-  padding: 0 .9375rem;
+  padding: .125rem .9375rem;
   border-radius: .625rem;
   background-color: #b2fd53;
   display: inline-flex!important;

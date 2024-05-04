@@ -574,7 +574,7 @@ textarea.input {
 }
 .title div {
   display: grid;
-  justify-content: center;
+  justify-items: center;
   align-items: center;
   border-radius: .625rem;
   padding: 0 .9375rem;
@@ -611,8 +611,7 @@ textarea.input {
   padding: .9375rem 1.875rem;
   background-color: #b2fd53;
   border-radius: 6.25rem;
-  font-weight: 600;
-  transition: all .3s
+  font-weight: 600
 }
 .button-calc:active {
   box-shadow: 0 4px 50px 0 rgba(178,253,83,.65)
@@ -913,19 +912,19 @@ textarea.input {
   opacity: 1
 }
 .hero__title span:nth-child(1) {
-  transition: all 1.2s .3s
+  transition: all 1s .2s
 }
 .hero__title span:nth-child(2) {
-  transition: all 1.2s .8s
+  transition: all .8s .6s
 }
 .hero__title span:nth-child(3) {
-  transition: all 1.5s 1.3s
+  transition: all 1.5s 1.1s
 }
 .hero__title span:nth-child(4) {
-  transition: all 1.5s 2s
+  transition: all 1.5s 1.5s
 }
 .hero__title span:nth-child(5) {
-  transition: all 1.2s 2.5s
+  transition: all 1.5s 1.9s
 }
 .hero__title-green {
   color: #b2fd53
@@ -939,8 +938,35 @@ textarea.input {
   align-items: center
 }
 .hero__text {
+  opacity: 0;
+  -webkit-transform: translate(-3.125rem,0);
+  transform: translate(-3.125rem,0);
+  transition: all 2s 2.4s;
   font-weight: 600;
   line-height: 1.375
+}
+.hero__text._watcher-view {
+  opacity: 1;
+  -webkit-transform: translate(0,0);
+  transform: translate(0,0)
+}
+.hero__button {
+  opacity: 0;
+  transition: left 2s 2.5s,opacity 2s 2.5s,box-shadow .3s;
+  left: 3.125rem
+}
+.hero__button._watcher-view {
+  opacity: 1;
+  left: 0
+}
+.hero__button svg {
+  opacity: 0;
+  transition: all 2s 4.5s;
+  visibility: hidden
+}
+.hero__button svg._watcher-view {
+  opacity: 1;
+  visibility: visible
 }
 .hero__animation {
   position: relative;
@@ -1329,6 +1355,7 @@ textarea.input {
   text-align: center
 }
 .video-container {
+  cursor: pointer;
   aspect-ratio: 530/264;
   overflow: hidden;
   width: 100%;

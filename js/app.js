@@ -4628,37 +4628,33 @@
                         prevPlayButton.style.display = "flex";
                         currentlyPlayingVideo.setAttribute("poster", "@img/video_bg.png");
                     }
-                    video.setAttribute("poster", "");
-                    playButton.style.display = "none";
-                    if (video.paused) video.play();
-                    currentlyPlayingVideo = video;
+                    if (video.paused) {
+                        playButton.style.display = "none";
+                        video.setAttribute("poster", "");
+                        video.play();
+                    } else {
+                        playButton.style.display = "flex";
+                        video.setAttribute("poster", "@img/video_bg.png");
+                        video.pause();
+                    }
+                    currentlyPlayingVideo = video.paused ? null : video;
                 }));
                 var video = videos[index];
                 video.addEventListener("click", (function() {
                     if (!video.paused) {
                         video.pause();
+                        video.setAttribute("poster", "@img/video_bg.png");
                         var container = video.closest(".video-container");
                         var playButton = container.querySelector(".play-gif");
                         playButton.style.display = "flex";
-                        video.setAttribute("poster", "@img/video_bg.png");
                     }
-                }));
-                video.addEventListener("play", (function() {
-                    if (currentlyPlayingVideo && currentlyPlayingVideo !== video) {
-                        currentlyPlayingVideo.pause();
-                        var prevVideoContainer = currentlyPlayingVideo.closest(".video-container");
-                        var prevPlayButton = prevVideoContainer.querySelector(".play-gif");
-                        prevPlayButton.style.display = "flex";
-                        currentlyPlayingVideo.setAttribute("poster", "@img/video_bg.png");
-                    }
-                    currentlyPlayingVideo = video;
                 }));
             }));
         }));
         let animation = document.querySelector(".hero__animation video");
         animation.muted = true;
         animation.play();
-        window["FLS"] = true;
+        window["FLS"] = false;
         menuInit();
         spollers();
         tabs();

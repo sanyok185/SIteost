@@ -4307,6 +4307,7 @@
                 spaceBetween: 30,
                 autoHeight: true,
                 speed: 800,
+                loop: true,
                 navigation: {
                     prevEl: ".feedback__slider--video .swiper-button-prev",
                     nextEl: ".feedback__slider--video .swiper-button-next"
@@ -4629,7 +4630,7 @@
                     }
                     video.setAttribute("poster", "");
                     playButton.style.display = "none";
-                    video.play();
+                    if (video.paused) video.play();
                     currentlyPlayingVideo = video;
                 }));
                 var video = videos[index];
@@ -4644,7 +4645,7 @@
                 }));
                 video.addEventListener("play", (function() {
                     if (currentlyPlayingVideo && currentlyPlayingVideo !== video) {
-                        currentlyPlayingVideo.stop();
+                        currentlyPlayingVideo.pause();
                         var prevVideoContainer = currentlyPlayingVideo.closest(".video-container");
                         var prevPlayButton = prevVideoContainer.querySelector(".play-gif");
                         prevPlayButton.style.display = "flex";

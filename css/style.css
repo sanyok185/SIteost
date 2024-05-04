@@ -565,10 +565,7 @@ textarea.input {
 }
 .title {
   font-weight: 900;
-  line-height: 1.2;
-  display: flex;
-  gap: .3125rem;
-  flex-direction: column;
+  line-height: 1.4;
   text-transform: uppercase;
   color: #fff
 }
@@ -576,12 +573,16 @@ textarea.input {
   color: #000
 }
 .title div {
+  line-height: 1.16;
   vertical-align: middle;
   text-align: center;
   border-radius: .625rem;
   padding: 0 .9375rem;
   background-color: #b2fd53;
-  color: #000
+  color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center
 }
 .title__green {
   vertical-align: middle;
@@ -592,7 +593,7 @@ textarea.input {
   padding: 0 .9375rem;
   border-radius: .625rem;
   background-color: #b2fd53;
-  display: inline-block!important;
+  display: inline-flex!important;
   justify-content: center;
   align-items: center;
   flex-direction: column;

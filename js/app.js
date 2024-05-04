@@ -4273,7 +4273,6 @@
                 spaceBetween: 30,
                 autoHeight: true,
                 speed: 800,
-                loop: true,
                 autoplay: {
                     delay: 3e3,
                     disableOnInteraction: true
@@ -4307,7 +4306,6 @@
                 spaceBetween: 30,
                 autoHeight: true,
                 speed: 800,
-                loop: true,
                 navigation: {
                     prevEl: ".feedback__slider--video .swiper-button-prev",
                     nextEl: ".feedback__slider--video .swiper-button-next"

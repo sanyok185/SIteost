@@ -581,19 +581,17 @@ textarea.input {
   -webkit-transform: translate(0,0);
   transform: translate(0,0)
 }
+.title div {
+  padding: .125rem 0
+}
 .title__green-bg {
   line-height: 1.16;
   vertical-align: middle;
   text-align: center;
   border-radius: .625rem;
-  padding: 0 .9375rem;
+  padding: .125rem .9375rem!important;
   background-color: #b2fd53;
   color: #000;
-  display: flex;
-  justify-content: center;
-  align-items: center
-}
-.title__green-bg span {
   display: flex;
   justify-content: center;
   align-items: center
@@ -1578,9 +1576,6 @@ textarea.input {
   .item-tabs__labels:not(:last-child) {
     margin-bottom: 2.5rem
   }
-  .title__green-bg {
-    height: 4.375rem
-  }
   .title__green {
     height: 4.375rem
   }
@@ -2130,9 +2125,6 @@ textarea.input {
   .item-tabs__labels:not(:last-child) {
     margin-bottom: .9375rem
   }
-  .title__green-bg {
-    height: 3.5625rem
-  }
   .running-tape {
     margin-bottom: 1.875rem
   }
@@ -2283,16 +2275,6 @@ textarea.input {
   @supports not (margin-bottom:clamp(0.9375rem ,0.0253599476rem + 3.2722513089vw ,2.5rem)) {
     .item-tabs__labels:not(:last-child) {
       margin-bottom: calc(.9375rem + 1.5625 * (100vw - 27.875rem)/ 47.75)
-    }
-  }
-  @supports (height:clamp(3.5625rem ,3.0881871728rem + 1.7015706806vw ,4.375rem)) {
-    .title__green-bg {
-      height: clamp(3.5625rem ,3.0881871728rem + 1.7015706806vw ,4.375rem)
-    }
-  }
-  @supports not (height:clamp(3.5625rem ,3.0881871728rem + 1.7015706806vw ,4.375rem)) {
-    .title__green-bg {
-      height: calc(3.5625rem + .8125 * (100vw - 27.875rem)/ 47.75)
     }
   }
   @supports (margin-bottom:clamp(1.875rem ,1.5101439791rem + 1.3089005236vw ,2.5rem)) {

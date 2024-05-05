@@ -941,6 +941,23 @@ textarea.input {
   -webkit-transform: translate(0,0);
   transform: translate(0,0)
 }
+.hero__circle {
+  opacity: 0;
+  transition: all 2s 4.5s;
+  visibility: hidden
+}
+.hero__circle._watcher-view {
+  opacity: 1;
+  visibility: visible
+}
+.hero__button {
+  left: 3.125rem;
+  opacity: 0
+}
+.hero__button._watcher-view {
+  opacity: 1;
+  left: 0
+}
 .hero__animation {
   transition: all .7s;
   opacity: 0;
@@ -957,9 +974,7 @@ textarea.input {
   height: 100%
 }
 .button-calc {
-  opacity: 0;
   transition: left 2s 2.5s,opacity 2s 2.5s,box-shadow .3s;
-  left: 3.125rem;
   border: 5px solid #b2fd53;
   position: relative;
   cursor: pointer;
@@ -969,15 +984,10 @@ textarea.input {
   border-radius: 6.25rem;
   font-weight: 600
 }
-.button-calc._watcher-view {
-  opacity: 1;
-  left: 0
-}
 .button-calc:active {
   box-shadow: 0 4px 50px 0 rgba(178,253,83,.65)
 }
 .circle {
-  position: absolute;
   top: 50%;
   -webkit-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
@@ -985,13 +995,7 @@ textarea.input {
   z-index: -1;
   -webkit-animation: rotate 25s linear infinite;
   animation: rotate 25s linear infinite;
-  opacity: 0;
-  transition: all 2s 4.5s;
-  visibility: hidden
-}
-.circle._watcher-view {
-  opacity: 1;
-  visibility: visible
+  position: absolute
 }
 @-webkit-keyframes rotate {
   from {

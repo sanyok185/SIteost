@@ -4611,32 +4611,44 @@
         }
         const da = new DynamicAdapt("max");
         da.init();
-        var playButtons = document.querySelectorAll(".play-gif");
-        playButtons.forEach((function(playButton) {
-            playButton.addEventListener("click", (function(event) {
-                var videoContainer = playButton.closest(".video-container");
-                var video = videoContainer.querySelector("video");
-                if (video.paused) {
-                    playButton.style.display = "none";
-                    video.setAttribute("poster", "");
-                    video.play();
-                } else {
-                    playButton.style.display = "flex";
-                    video.pause();
-                    video.setAttribute("poster", "@img/video_bg.png");
-                }
+        document.addEventListener("DOMContentLoaded", (function() {
+            let playButtons = document.querySelectorAll(".play-gif");
+            let videos = document.querySelectorAll(".video-container video");
+            let currentVideo = null;
+            playButtons.forEach((function(playButton) {
+                playButton.addEventListener("click", (function(event) {
+                    let videoContainer = playButton.closest(".video-container");
+                    let video = videoContainer.querySelector("video");
+                    if (video.paused) {
+                        if (currentVideo && currentVideo !== video) {
+                            currentVideo.pause();
+                            let currentVideoContainer = currentVideo.closest(".video-container");
+                            let currentPlayButton = currentVideoContainer.querySelector(".play-gif");
+                            currentPlayButton.style.display = "flex";
+                            currentVideo.setAttribute("poster", "@img/video_bg.png");
+                        }
+                        currentVideo = video;
+                        playButton.style.display = "none";
+                        video.setAttribute("poster", "");
+                        video.play();
+                    } else {
+                        playButton.style.display = "flex";
+                        video.pause();
+                        video.setAttribute("poster", "@img/video_bg.png");
+                    }
+                }));
             }));
-        }));
-        var videos = document.querySelectorAll(".video-container video");
-        videos.forEach((function(video) {
-            video.addEventListener("click", (function() {
-                var container = video.closest(".video-container");
-                var playButton = container.querySelector(".play-gif");
-                if (!video.paused) {
-                    video.pause();
-                    video.setAttribute("poster", "@img/video_bg.png");
-                    playButton.style.display = "flex";
-                }
+            videos.forEach((function(video) {
+                video.addEventListener("click", (function() {
+                    let container = video.closest(".video-container");
+                    let playButton = container.querySelector(".play-gif");
+                    if (!video.paused) {
+                        video.pause();
+                        video.setAttribute("poster", "@img/video_bg.png");
+                        playButton.style.display = "flex";
+                    }
+                    currentVideo = null;
+                }));
             }));
         }));
         let animation = document.querySelector(".hero__animation video");

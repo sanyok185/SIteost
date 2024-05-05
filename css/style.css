@@ -567,7 +567,7 @@ textarea.input {
 .title {
   line-height: 1.16;
   font-weight: 900;
-  text-align: center;
+  text-align: left;
   text-transform: uppercase;
   color: #fff;
   opacity: 0;
@@ -584,10 +584,9 @@ textarea.input {
   transform: translate(0,0)
 }
 .title__green-bg {
-  display: flex;
   margin-top: .3125rem;
   vertical-align: sub;
-  padding: .125rem .9375rem;
+  padding: .75rem .9375rem;
   color: #000!important;
   position: relative;
   border-radius: .625rem;
@@ -1246,6 +1245,11 @@ textarea.input {
   color: #fff;
   font-size: 1.5rem;
   padding: .9375rem 3.75rem
+}
+.stack__container {
+  display: grid;
+  justify-items: start;
+  overflow: visible
 }
 .stack__items {
   width: 100%;

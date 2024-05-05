@@ -582,7 +582,7 @@ textarea.input {
   transform: translate(0,0)
 }
 .title__green-bg {
-  vertical-align: middle;
+  vertical-align: sub;
   text-align: center;
   padding: .125rem .9375rem;
   color: #000;

@@ -567,7 +567,6 @@ textarea.input {
   line-height: 1.16;
   font-weight: 900;
   text-align: center;
-  font-size: 3.75rem;
   text-transform: uppercase;
   color: #fff;
   opacity: 0;
@@ -584,6 +583,7 @@ textarea.input {
   transform: translate(0,0)
 }
 .title__green-bg {
+  color: #fff!important;
   margin-top: .3125rem;
   vertical-align: sub;
   padding: .125rem .9375rem;
@@ -1522,6 +1522,11 @@ textarea.input {
   font-weight: 400;
   font-style: normal
 }
+@media (min-width:24.375em) and (min-width:75.625em) {
+  .title {
+    font-size: 3.75rem
+  }
+}
 @media (min-width:29.99875em) {
   .button-calc {
     box-shadow: 0 4px 50px 0 rgba(178,253,83,.5)
@@ -2221,6 +2226,11 @@ textarea.input {
     gap: .625rem
   }
 }
+@media (max-width:24.375em) {
+  .title {
+    font-size: 2.3125rem
+  }
+}
 @media (max-width:23.4375em) {
   .title__green svg:nth-child(2) {
     display: none
@@ -2508,6 +2518,23 @@ textarea.input {
     .questions__button {
       margin-top: calc(1.875rem + .625 * (100vw - 27.875rem)/ 47.75)
     }
+  }
+}
+@media (min-width:24.375em) and (min-width:27.875em) and (max-width:75.625em) {
+  @supports (font-size:clamp(2.8125rem ,2.2652159686rem + 1.9633507853vw ,3.75rem)) {
+    .title {
+      font-size: clamp(2.8125rem ,2.2652159686rem + 1.9633507853vw ,3.75rem)
+    }
+  }
+  @supports not (font-size:clamp(2.8125rem ,2.2652159686rem + 1.9633507853vw ,3.75rem)) {
+    .title {
+      font-size: calc(2.8125rem + .9375 * (100vw - 27.875rem)/ 47.75)
+    }
+  }
+}
+@media (min-width:24.375em) and (max-width:27.875em) {
+  .title {
+    font-size: 2.8125rem
   }
 }
 @media (min-width:20em) and (max-width:75.625em) {

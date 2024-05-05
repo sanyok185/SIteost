@@ -564,8 +564,8 @@ textarea.input {
   object-fit: contain
 }
 .title {
+  line-height: 1.16;
   font-weight: 900;
-  line-height: 1;
   text-transform: uppercase;
   color: #fff;
   opacity: 0;

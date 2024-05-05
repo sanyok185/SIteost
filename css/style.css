@@ -473,7 +473,8 @@ textarea.input {
 }
 .tabs__title._tab-active {
   background-color: #b2fd53;
-  color: #16171a
+  color: #16171a;
+  pointer-events: none
 }
 .tabs__content {
   width: 100%
@@ -1245,11 +1246,6 @@ textarea.input {
   color: #fff;
   font-size: 1.5rem;
   padding: .9375rem 3.75rem
-}
-.stack__container {
-  display: grid;
-  justify-items: start;
-  overflow: visible
 }
 .stack__items {
   width: 100%;
@@ -2925,7 +2921,7 @@ textarea.input {
     background-color: rgba(102,92,167,.2)
   }
   .tabs__title:hover {
-    background-color: rgba(179,253,83,.3)
+    background-color: rgba(179,253,83,.4)
   }
   .button:hover {
     -webkit-transform: translateY(-3px);

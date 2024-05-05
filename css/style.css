@@ -565,7 +565,7 @@ textarea.input {
 }
 .title {
   font-weight: 900;
-  line-height: 1.4;
+  line-height: 1;
   text-transform: uppercase;
   color: #fff;
   opacity: 0;
@@ -582,7 +582,6 @@ textarea.input {
   transform: translate(0,0)
 }
 .title__green-bg {
-  line-height: 1.16;
   vertical-align: middle;
   text-align: center;
   padding: .125rem .9375rem;

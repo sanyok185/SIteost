@@ -583,14 +583,10 @@ textarea.input {
   transform: translate(0,0)
 }
 .title__green-bg {
-  color: #fff!important;
   margin-top: .3125rem;
   vertical-align: sub;
   padding: .125rem .9375rem;
-  color: #000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  color: #000!important;
   position: relative
 }
 .title__green-bg::after {

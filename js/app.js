@@ -4612,7 +4612,7 @@
         const da = new DynamicAdapt("max");
         da.init();
         document.addEventListener("DOMContentLoaded", (function() {
-            const playButtons = document.querySelectorAll(".play-gif");
+            const playButtons = document.querySelectorAll(".play-button-wrapper");
             playButtons.forEach((function(playButton) {
                 playButton.addEventListener("click", (function(event) {
                     const videoContainer = playButton.closest(".video-container");
@@ -4627,7 +4627,7 @@
                 const videos = document.querySelectorAll(".video-container video");
                 videos.forEach((video => {
                     if (!video.paused) {
-                        const playButton = video.closest(".video-container").querySelector(".play-gif");
+                        const playButton = video.closest(".video-container").querySelector(".play-button-wrapper");
                         pauseVideo(video, playButton);
                     }
                 }));
@@ -4646,7 +4646,7 @@
             videos.forEach((function(video) {
                 video.addEventListener("click", (function() {
                     const container = video.closest(".video-container");
-                    const playButton = container.querySelector(".play-gif");
+                    const playButton = container.querySelector(".play-button-wrapper");
                     pauseVideo(video, playButton);
                 }));
             }));

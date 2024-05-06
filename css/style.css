@@ -597,6 +597,7 @@ textarea.input {
   background-color: #b2fd53
 }
 .title__green {
+  white-space: nowrap;
   text-align: center;
   line-height: 1;
   position: relative;
@@ -1016,6 +1017,13 @@ textarea.input {
     transform: translate(-50%,-50%) rotate(0)
   }
 }
+.why {
+  opacity: 0;
+  transition: all .5s
+}
+.why._watcher-view {
+  opacity: 1
+}
 .why__container {
   display: flex;
   flex-direction: column;
@@ -1041,6 +1049,9 @@ textarea.input {
   flex: 0 1 58%;
   margin-right: auto;
   overflow: hidden
+}
+.why__title {
+  transition: all .5s .2s
 }
 .why__list {
   display: grid;
@@ -1576,9 +1587,6 @@ textarea.input {
   .item-tabs__labels:not(:last-child) {
     margin-bottom: 2.5rem
   }
-  .title__green {
-    height: 4.375rem
-  }
   .running-tape {
     margin-bottom: 2.5rem
   }
@@ -1771,9 +1779,6 @@ textarea.input {
   }
 }
 @media (max-width:20em) {
-  .title__green {
-    height: 2.5rem
-  }
   .header__container {
     gap: 1.5625rem
   }
@@ -1979,7 +1984,7 @@ textarea.input {
     grid-template-columns: 1fr
   }
   .title__green {
-    padding: .1875rem .75rem
+    padding: 0 .75rem
   }
   .menu-open .icon-menu::after,
   .menu-open .icon-menu::before {
@@ -2526,16 +2531,6 @@ textarea.input {
   }
 }
 @media (min-width:20em) and (max-width:75.625em) {
-  @supports (height:clamp(2.5rem ,1.8258426966rem + 3.3707865169vw ,4.375rem)) {
-    .title__green {
-      height: clamp(2.5rem ,1.8258426966rem + 3.3707865169vw ,4.375rem)
-    }
-  }
-  @supports not (height:clamp(2.5rem ,1.8258426966rem + 3.3707865169vw ,4.375rem)) {
-    .title__green {
-      height: calc(2.5rem + 1.875 * (100vw - 20rem)/ 55.625)
-    }
-  }
   @supports (gap:clamp(1.5625rem ,1.4501404494rem + 0.5617977528vw ,1.875rem)) {
     .header__container {
       gap: clamp(1.5625rem ,1.4501404494rem + .5617977528vw ,1.875rem)

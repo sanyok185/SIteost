@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20240506121823">
+	<link rel="stylesheet" href="css/style.min.css?_v=20240506122930">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -279,7 +279,7 @@
 			</section>
 			<section class="page__cases cases">
 				<div class="cases__container">
-					<h2 class="cases__title title" data-watch>Наші <span>кейси</span></h2>
+					<h2 class="cases__title title" data-watch data-watch-threshold="0.3">Наші <span>кейси</span></h2>
 					<div data-tabs class="cases__tabs tabs">
 						<nav data-tabs-titles class="tabs__navigation">
 							<button type="button" class="tabs__title _tab-active">
@@ -1132,9 +1132,9 @@
 										<div class="feedback__slide swiper-slide slide-feedback">
 											<div class="slide-feedback__video">
 												<div class="video-container" id="video-container">
-													<video id="video" poster="img/video_bg.webp">
-														<source src="./files/animation.webm" type="video/webm" />
+													<video controls id="video" poster="img/video_bg.webp">
 														<source src="./files/animation.mp4" type="video/mp4" />
+														<source src="./files/animation.webm" type="video/webm" />
 													</video>
 
 													<div class="play-button-wrapper">
@@ -1310,7 +1310,7 @@
 			</div>
 		</footer>
 	</div>
-	<script src="js/app.min.js?_v=20240506121823"></script>
+	<script src="js/app.min.js?_v=20240506122930"></script>
 </body>
 
 </html>

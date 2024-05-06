@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=Freeman:regular);
 @font-face {
   font-family: Gilroy;
   font-display: swap;
@@ -83,7 +84,7 @@ html {
 body {
   color: #fff;
   line-height: 1;
-  font-family: Gilroy;
+  font-family: Freeman;
   font-size: .875rem;
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
@@ -94,7 +95,7 @@ body {
 button,
 input,
 textarea {
-  font-family: Gilroy;
+  font-family: Freeman;
   font-size: inherit;
   line-height: inherit;
   color: inherit;
@@ -589,7 +590,6 @@ textarea.input {
 }
 .title__green-bg {
   margin-top: .3125rem;
-  vertical-align: sub;
   padding: .125rem .9375rem;
   color: #000!important;
   position: relative;

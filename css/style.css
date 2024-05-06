@@ -588,6 +588,7 @@ textarea.input {
   transform: translate(0,0)
 }
 .title__green-bg {
+  display: block;
   margin-top: .3125rem;
   padding: .125rem .9375rem;
   color: #000!important;
@@ -596,18 +597,14 @@ textarea.input {
   background-color: #b2fd53
 }
 .title__green {
-  vertical-align: middle;
   text-align: center;
   line-height: 1;
   position: relative;
   z-index: 2;
   padding: .125rem .9375rem;
   border-radius: .625rem;
+  color: #000!important;
   background-color: #b2fd53;
-  display: inline-flex!important;
-  justify-content: flex-start;
-  align-items: center;
-  flex-direction: column;
   text-align: center
 }
 .title__green svg {

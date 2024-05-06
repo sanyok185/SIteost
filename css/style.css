@@ -903,19 +903,16 @@ textarea.input {
   opacity: 1
 }
 .hero__title span:nth-child(1) {
-  transition: all 1s .2s
+  transition: all 1.1s ease-out .2s
 }
 .hero__title span:nth-child(2) {
-  transition: all .8s .6s
+  transition: all 1.1s ease-out .7s
 }
 .hero__title span:nth-child(3) {
-  transition: all 1.5s 1s
+  transition: all 2s ease-out 1.3s
 }
 .hero__title span:nth-child(4) {
-  transition: all 1.5s 1.5s
-}
-.hero__title span:nth-child(5) {
-  transition: all 1.5s 1.9s
+  transition: all 1.5s ease-out 2.2s
 }
 .hero__title-green {
   color: #b2fd53
@@ -943,7 +940,7 @@ textarea.input {
 }
 .hero__circle {
   opacity: 0;
-  transition: all 2s 4.5s;
+  transition: all 2s 4s;
   visibility: hidden
 }
 .hero__circle._watcher-view {
@@ -974,7 +971,7 @@ textarea.input {
   height: 100%
 }
 .button-calc {
-  transition: left 2s 2.5s,opacity 2s 2.5s,box-shadow .3s;
+  transition: left 2s 2.8s,opacity 2s 2.8s,box-shadow .3s;
   border: 5px solid #b2fd53;
   position: relative;
   cursor: pointer;

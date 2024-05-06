@@ -504,7 +504,8 @@ textarea.input {
   font-weight: 900;
   line-height: 1.16667;
   text-transform: uppercase;
-  color: #b2fd53
+  color: #b2fd53;
+  transition: all .4s
 }
 .item-tabs__caption {
   font-weight: 900;
@@ -537,6 +538,9 @@ textarea.input {
   justify-content: center;
   align-items: center;
   min-height: 16.25rem
+}
+.item-tabs__logo img {
+  transition: all .5s
 }
 .ibg {
   width: 100%;
@@ -586,7 +590,7 @@ textarea.input {
 .title__green-bg {
   margin-top: .3125rem;
   vertical-align: sub;
-  padding: .75rem .9375rem;
+  padding: .125rem .9375rem;
   color: #000!important;
   position: relative;
   border-radius: .625rem;
@@ -1305,7 +1309,7 @@ textarea.input {
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  transition: all .3s
+  transition: all .4s
 }
 .item-how__body {
   margin-right: auto
@@ -2927,6 +2931,13 @@ textarea.input {
   .tabs__title:hover {
     background-color: rgba(179,253,83,.4)
   }
+  .item-tabs__name:hover {
+    text-shadow: 0 4px 50px rgba(178,253,83,.4)
+  }
+  .item-tabs__logo:hover img {
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05)
+  }
   .button:hover {
     -webkit-transform: translateY(-3px);
     transform: translateY(-3px);
@@ -2977,7 +2988,7 @@ textarea.input {
   .button-calc:hover {
     box-shadow: 0 4px 50px 0 rgba(178,253,83,.65)
   }
-  .item-how__number:hover {
+  .item-how:hover .item-how__number {
     color: rgba(179,253,83,.693)
   }
   .play-button-wrapper #circle-play-b:hover svg {

@@ -2926,8 +2926,8 @@ textarea.input {
     text-shadow: 0 4px 50px rgba(178,253,83,.4)
   }
   .item-tabs__logo:hover img {
-    -webkit-transform: scale(1.05);
-    transform: scale(1.05)
+    -webkit-transform: scale(1.03);
+    transform: scale(1.03)
   }
   .button:hover {
     -webkit-transform: translateY(-3px);

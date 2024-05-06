@@ -940,7 +940,7 @@ textarea.input {
 }
 .hero__circle {
   opacity: 0;
-  transition: all 2s 4s;
+  transition: all 2s 4.8s;
   visibility: hidden
 }
 .hero__circle._watcher-view {
@@ -971,7 +971,7 @@ textarea.input {
   height: 100%
 }
 .button-calc {
-  transition: left 2s 2.8s,opacity 2s 2.8s,box-shadow .3s;
+  transition: left 2s 2.8s,opacity 2s 2.7s,box-shadow .3s;
   border: 5px solid #b2fd53;
   position: relative;
   cursor: pointer;

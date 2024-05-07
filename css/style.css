@@ -1,21 +1,7 @@
 @font-face {
   font-family: Gilroy;
   font-display: swap;
-  src: url(../fonts/Gilroy-ExtraBold.woff2) format("woff2");
-  font-weight: 800;
-  font-style: normal
-}
-@font-face {
-  font-family: Gilroy;
-  font-display: swap;
   src: url(../fonts/Gilroy-Black.woff2) format("woff2");
-  font-weight: 900;
-  font-style: normal
-}
-@font-face {
-  font-family: Gilroy;
-  font-display: swap;
-  src: url(../fonts/Gilroy-Heavy.woff2) format("woff2");
   font-weight: 900;
   font-style: normal
 }
@@ -29,15 +15,15 @@
 @font-face {
   font-family: Gilroy;
   font-display: swap;
-  src: url(../fonts/Gilroy-Light.woff2) format("woff2");
-  font-weight: 300;
+  src: url(../fonts/Gilroy-ExtraBold.woff2) format("woff2");
+  font-weight: 800;
   font-style: normal
 }
 @font-face {
   font-family: Gilroy;
   font-display: swap;
-  src: url(../fonts/Gilroy-Medium.woff2) format("woff2");
-  font-weight: 500;
+  src: url(../fonts/Gilroy-Light.woff2) format("woff2");
+  font-weight: 300;
   font-style: normal
 }
 @font-face {
@@ -57,8 +43,22 @@
 @font-face {
   font-family: Gilroy;
   font-display: swap;
+  src: url(../fonts/Gilroy-Medium.woff2) format("woff2");
+  font-weight: 500;
+  font-style: normal
+}
+@font-face {
+  font-family: Gilroy;
+  font-display: swap;
   src: url(../fonts/Gilroy-Thin.woff2) format("woff2");
   font-weight: 100;
+  font-style: normal
+}
+@font-face {
+  font-family: Gilroy;
+  font-display: swap;
+  src: url(../fonts/Gilroy-Heavy.woff2) format("woff2");
+  font-weight: 900;
   font-style: normal
 }
 @font-face {
@@ -446,6 +446,7 @@ body::after {
   align-items: center
 }
 .popup__content {
+  max-width: 28.75rem;
   visibility: hidden;
   -webkit-transform: scale(0);
   transform: scale(0);
@@ -453,13 +454,18 @@ body::after {
   transition: transform .3s ease 0s;
   transition: transform .3s ease 0s,-webkit-transform .3s ease 0s;
   background-color: #eee;
-  padding: 20px;
-  width: 100%;
-  max-width: 900px;
-  border-radius: 20px
+  border-radius: 1.25rem;
+  width: 100%
 }
 .lock .popup__content {
   visibility: visible
+}
+.popup__close {
+  position: absolute;
+  top: .9375rem;
+  right: .9375rem;
+  z-index: 120;
+  transition: all .3s
 }
 .spollers {
   display: grid;
@@ -478,7 +484,7 @@ body::after {
   border-radius: .625rem;
   position: relative;
   list-style: none;
-  transition: border-radius .1s .31s,border-bottom .1s
+  transition: border-radius .1s .31s
 }
 .spollers__title::-webkit-details-marker,
 .spollers__title::marker {
@@ -510,7 +516,6 @@ body::after {
   top: 50%
 }
 ._spoller-init .spollers__title._spoller-active {
-  border-bottom: 1px solid #1c1d20;
   transition: none;
   border-radius: .625rem .625rem 0 0
 }
@@ -525,8 +530,10 @@ body::after {
   transition: transform .5s ease 0s,-webkit-transform .5s ease 0s;
   -webkit-transition: transform .5s ease 0s
 }
+._spoller-init .spollers__title._spoller-active + .spollers__body {
+  border-top: 1px solid #25272e
+}
 .spollers__body {
-  border-top: 1px solid #25272e;
   padding: .6875rem 1.25rem;
   border-radius: 0 0 .625rem .625rem;
   background-color: #1c1d20;
@@ -721,6 +728,48 @@ body::after {
 .button:active {
   box-shadow: 0 4px 50px 0 rgba(178,253,83,.65)
 }
+.running-tape-container {
+  overflow-x: auto;
+  white-space: nowrap;
+  cursor: -webkit-grab;
+  cursor: grab;
+  -ms-overflow-style: none;
+  scrollbar-width: none
+}
+.running-tape-container::-webkit-scrollbar {
+  display: none
+}
+.running-tape-container::-webkit-scrollbar-track {
+  background-color: transparent
+}
+.running-tape-container::-webkit-scrollbar-thumb {
+  background-color: rgba(255,255,255,.3);
+  border-radius: 10px
+}
+.running-tape-container::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255,255,255,.5)
+}
+.running-tape-container {
+  overflow-x: auto;
+  white-space: nowrap;
+  cursor: -webkit-grab;
+  cursor: grab;
+  -ms-overflow-style: none;
+  scrollbar-width: none
+}
+.running-tape-container::-webkit-scrollbar {
+  display: none
+}
+.running-tape-container::-webkit-scrollbar-track {
+  background-color: transparent
+}
+.running-tape-container::-webkit-scrollbar-thumb {
+  background-color: rgba(255,255,255,.3);
+  border-radius: 10px
+}
+.running-tape-container::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255,255,255,.5)
+}
 .running-tape {
   font-weight: 700;
   font-size: 4.375rem;
@@ -796,50 +845,6 @@ body::after {
     -webkit-transform: translateX(-200%);
     transform: translateX(-200%)
   }
-}
-.running-tape-container {
-  overflow-x: auto;
-  white-space: nowrap;
-  cursor: -webkit-grab;
-  cursor: grab;
-  -ms-overflow-style: none;
-  scrollbar-width: none
-}
-.running-tape-container::-webkit-scrollbar {
-  display: none
-}
-.running-tape-container::-webkit-scrollbar-track {
-  background-color: transparent
-}
-.running-tape-container::-webkit-scrollbar-thumb {
-  background-color: rgba(255,255,255,.3);
-  border-radius: 10px
-}
-.running-tape-container::-webkit-scrollbar-thumb:hover {
-  background-color: rgba(255,255,255,.5)
-}
-.running-tape {
-  font-weight: 700;
-  font-size: 4.375rem;
-  text-transform: uppercase;
-  text-align: center;
-  color: rgba(255,255,255,.06);
-  transition: all .6s;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  white-space: nowrap
-}
-.running-tape__connects {
-  width: 100%;
-  margin: 0 auto;
-  white-space: nowrap;
-  display: flex
-}
-.running-tape__line {
-  padding: 0 1.25rem 0 0;
-  display: inline-flex;
-  gap: 1.25rem
 }
 .header {
   position: fixed;
@@ -3004,6 +3009,9 @@ body::after {
     background-color: #665ca7;
     color: #fff
   }
+  .popup__close:hover {
+    stroke: red
+  }
   .tabs__title:hover {
     background-color: #b3fd53;
     color: #16171a
@@ -3021,14 +3029,6 @@ body::after {
   .running-tape-container:hover {
     overflow-x: auto;
     white-space: nowrap
-  }
-  .running-tape__connects:hover .running-tape__line {
-    -webkit-animation-play-state: paused;
-    animation-play-state: paused
-  }
-  .running-tape__connects:hover .running-tape__line--text {
-    -webkit-animation-play-state: running;
-    animation-play-state: running
   }
   .menu__link:hover {
     background-color: #b2fd53;

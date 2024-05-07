@@ -4905,6 +4905,7 @@
             const runningTape = document.querySelector(".running-tape");
             let isDragging = false;
             let startPosition = null;
+            let animationId;
             runningTapeContainer.addEventListener("mousedown", startDrag);
             runningTapeContainer.addEventListener("mouseup", endDrag);
             runningTapeContainer.addEventListener("mousemove", drag);
@@ -4946,7 +4947,6 @@
                     if (runningTapeContainer.scrollLeft <= 0) runningTapeContainer.scrollLeft += runningTape.scrollWidth / 2; else if (runningTapeContainer.scrollLeft >= runningTape.scrollWidth / 2) runningTapeContainer.scrollLeft -= runningTape.scrollWidth / 2;
                 }
             }
-            let animationId;
             function loopScroll() {
                 if (runningTapeContainer.scrollLeft >= runningTape.scrollWidth / 2) runningTapeContainer.scrollLeft -= runningTape.scrollWidth / 2;
                 animationId = requestAnimationFrame(loopScroll);
@@ -4957,6 +4957,36 @@
             }));
             runningTapeContainer.addEventListener("mouseleave", (function() {
                 loopScroll();
+            }));
+            runningTapeContainer.addEventListener("mouseenter", (function() {
+                runningTape.querySelectorAll(".running-tape__line").forEach((function(line) {
+                    line.style.animationPlayState = "paused";
+                }));
+            }));
+            runningTapeContainer.addEventListener("mouseleave", (function() {
+                runningTape.querySelectorAll(".running-tape__line").forEach((function(line) {
+                    line.style.animationPlayState = "running";
+                }));
+            }));
+            runningTapeContainer.addEventListener("mousedown", (function() {
+                runningTape.querySelectorAll(".running-tape__line").forEach((function(line) {
+                    line.style.animationPlayState = "paused";
+                }));
+            }));
+            runningTapeContainer.addEventListener("mouseup", (function() {
+                runningTape.querySelectorAll(".running-tape__line").forEach((function(line) {
+                    line.style.animationPlayState = "running";
+                }));
+            }));
+            runningTapeContainer.addEventListener("touchstart", (function() {
+                runningTape.querySelectorAll(".running-tape__line").forEach((function(line) {
+                    line.style.animationPlayState = "paused";
+                }));
+            }));
+            runningTapeContainer.addEventListener("touchend", (function() {
+                runningTape.querySelectorAll(".running-tape__line").forEach((function(line) {
+                    line.style.animationPlayState = "running";
+                }));
             }));
             runningTapeContainer.addEventListener("mousedown", (function(event) {
                 event.preventDefault();

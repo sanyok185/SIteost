@@ -210,6 +210,10 @@ body {
   background-color: #f1f3ff;
   border-radius: 1.25rem
 }
+.form-request--popup .form-request__title {
+  max-width: 80%;
+  margin: 0 auto
+}
 .form-request__title {
   font-weight: 700;
   font-size: 1rem;
@@ -534,6 +538,7 @@ body::after {
   border-top: 1px solid #25272e
 }
 .spollers__body {
+  transition: all .3s 1s;
   padding: .6875rem 1.25rem;
   border-radius: 0 0 .625rem .625rem;
   background-color: #1c1d20;

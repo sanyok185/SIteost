@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20240507160045">
+	<link rel="stylesheet" href="css/style.min.css?_v=20240507164938">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,7 +28,7 @@
 							<li class="menu__item"><a href="" class="menu__link" data-goto=".questions" data-goto-header>FAQ</a></li>
 							<li class="menu__item"><a href="" class="menu__link" data-goto=".footer">Контакти</a></li>
 						</ul>
-						<div class="header__button button-calc" data-watch>
+						<div class="header__button button-calc" data-watch data-popup="#popup-form">
 							Розрахувати вартість
 							<svg class="circle" xmlns="http://www.w3.org/2000/svg" width="178" height="178" fill="none" viewBox="0 0 178 178">
 								<g filter="url(#a)">
@@ -988,35 +988,35 @@
 						</h3>
 						<div class="form-request__items">
 							<div class="form-request__item">
-								<label for="name" class="form-request__label">Ваше ім'я</label>
-								<input id="name" data-required autocomplete="off" type="text" name="name" data-error="Помилка" placeholder="Вкажіть ім'я" class="form-request__input input" />
+								<label for="name_2" class="form-request__label">Ваше ім'я</label>
+								<input id="name_2" data-required autocomplete="off" type="text" name="name" data-error="Помилка" placeholder="Вкажіть ім'я" class="form-request__input input" />
 							</div>
 							<div class="form-request__item">
-								<label for="phone" class="form-request__label">Номер телефону</label>
-								<input id="phone" data-required autocomplete="off" type="text" name="phone" data-error="Помилка" placeholder="Введіть номер телефону" class="form-request__input input" />
+								<label for="phone_2" class="form-request__label">Номер телефону</label>
+								<input id="phone_2" data-required autocomplete="off" type="text" name="phone" data-error="Помилка" placeholder="Введіть номер телефону" class="form-request__input input" />
 							</div>
 							<div class="form-request__item">
-								<label for="field" class="form-request__label">Сфера діяльності</label>
-								<input id="field" data-required autocomplete="off" type="field" name="name" data-error="Помилка" placeholder="Чим ви займаєтесь?" class="form-request__input input" />
+								<label for="field_2" class="form-request__label">Сфера діяльності</label>
+								<input id="field" data-required autocomplete="off" type="field" name="field" data-error="Помилка" placeholder="Чим ви займаєтесь?" class="form-request__input input" />
 							</div>
 						</div>
-						<label for="options" class="form-request__label form-request__label--options">Зручний метод зв'язку</label>
+						<label for="options" class="form-request__label">Зручний метод зв'язку</label>
 						<div class="form-request__options options" id="options">
 							<div class="options__item">
-								<input id="Telegram" class="options__input" checked type="radio" value="1" name="messenger" />
-								<label for="Telegram" class="options__label _icon-telegram">
+								<input id="Telegram_2" class="options__input" checked type="radio" value="21" name="messenger_2" />
+								<label for="Telegram_2" class="options__label _icon-telegram">
 									<span class="options__text">Telegram</span>
 								</label>
 							</div>
 							<div class="options__item">
-								<input id="WhatsApp" class="options__input" type="radio" value="2" name="messenger" />
-								<label for="WhatsApp" class="options__label options__label--whatsapp _icon-WhatsApp">
+								<input id="WhatsApp_2" class="options__input" type="radio" value="22" name="messenger_2" />
+								<label for="WhatsApp_2" class="options__label options__label--whatsapp _icon-WhatsApp">
 									<span class="options__text">WhatsApp</span>
 								</label>
 							</div>
 							<div class="options__item">
-								<input id="Viber" class="options__input" type="radio" value="3" name="messenger" />
-								<label for="Viber" class="options__label options__label--viber _icon-viber">
+								<input id="Viber_2" class="options__input" type="radio" value="23" name="messenger_2" />
+								<label for="Viber_2" class="options__label options__label--viber _icon-viber">
 									<span class="options__text">Viber</span>
 								</label>
 							</div>
@@ -1312,7 +1312,7 @@
 						<path opacity="0.850056" d="M21.2667 1.48883L1.45309 21.0288" stroke-linecap="square" />
 					</svg>
 				</button>
-				<form class="request__form form-request" action="files/sendmail/sendmail.php" method="POST">
+				<form class="request__form form-request form-request--popup" action="files/sendmail/sendmail.php" method="POST">
 					<h3 class="form-request__title">
 						Зробимо розрахунок Вашого сайту
 					</h3>
@@ -1362,7 +1362,7 @@
 			</div>
 		</div>
 	</div>
-	<script src="js/app.min.js?_v=20240507160045"></script>
+	<script src="js/app.min.js?_v=20240507164938"></script>
 </body>
 
 </html>

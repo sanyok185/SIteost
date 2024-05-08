@@ -4897,9 +4897,11 @@
                 }));
             }));
         }));
-        let animation = document.querySelector(".hero__animation video");
-        animation.muted = true;
-        animation.play();
+        document.addEventListener("DOMContentLoaded", (function() {
+            let animation = document.querySelector(".hero__animation video");
+            animation.muted = true;
+            animation.play();
+        }));
         document.addEventListener("DOMContentLoaded", (function() {
             const runningTapeContainer = document.querySelector(".running-tape-container");
             const runningTape = document.querySelector(".running-tape");

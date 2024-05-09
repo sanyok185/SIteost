@@ -2259,6 +2259,9 @@ body::after {
   .request--second .request__content {
     height: auto
   }
+  .request--third .request__content {
+    height: auto
+  }
   .request__bg--1 {
     width: 10rem
   }

@@ -4897,19 +4897,33 @@
                 }));
             }));
         }));
-        if (document.querySelector(".hero__animation video")) {
-            document.querySelector(".hero__animation video");
-        }
         document.addEventListener("DOMContentLoaded", (function() {
-            animation.muted = true;
-            animation.autoplay = true;
-            animation.loop = true;
-            animation.playsInline = true;
-            animation.play();
+            if (document.querySelector(".hero__animation video")) {
+                let animation = document.querySelector(".hero__animation video");
+                animation.muted = true;
+                animation.autoplay = true;
+                animation.loop = true;
+                animation.playsInline = true;
+                animation.play();
+                animation.addEventListener("suspend", (() => {
+                    animation.play();
+                    console.log("suspend event triggered");
+                }));
+                animation.addEventListener("play", (() => {
+                    console.log("play event triggered");
+                }));
+            }
         }));
-        animation.addEventListener("suspend", (() => {
-            animation.play();
+        if (document.querySelector(".hero__animation video")) document.body.addEventListener("click", (function(event) {
+            const videoElement = document.querySelector(".hero__animation video");
+            const isTouch = event.type === "touchstart";
+            if (!isTouch || isTouch && !videoElement.playing) if (!videoElement.playing) videoElement.play();
         }));
+        Object.defineProperty(HTMLMediaElement.prototype, "playing", {
+            get: function() {
+                return !!(this.currentTime > 0 && !this.paused && !this.ended && this.readyState > 2);
+            }
+        });
         document.addEventListener("DOMContentLoaded", (function() {
             const runningTapeContainer = document.querySelector(".running-tape-container");
             const runningTape = document.querySelector(".running-tape");

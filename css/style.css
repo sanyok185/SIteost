@@ -1855,9 +1855,6 @@ body::after {
   }
 }
 @media (max-width:25em) {
-  .options {
-    gap: .5rem
-  }
   .spollers__title {
     font-size: 1rem
   }
@@ -2316,6 +2313,11 @@ body::after {
   }
   .request__bg--2 {
     right: -7.5rem
+  }
+}
+@media (max-width:26.25em) {
+  .options {
+    gap: .5rem
   }
 }
 @media (max-width:24.375em) {

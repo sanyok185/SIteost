@@ -4902,6 +4902,7 @@
             animation.muted = true;
             animation.autoplay = true;
             animation.loop = true;
+            animation.playsInline = true;
             animation.play();
         }));
         document.addEventListener("DOMContentLoaded", (function() {

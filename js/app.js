@@ -636,6 +636,122 @@
             bodyUnlock();
             document.documentElement.classList.remove("menu-open");
         }
+        function showMore() {
+            window.addEventListener("load", (function(e) {
+                const showMoreBlocks = document.querySelectorAll("[data-showmore]");
+                let showMoreBlocksRegular;
+                let mdQueriesArray;
+                if (showMoreBlocks.length) {
+                    showMoreBlocksRegular = Array.from(showMoreBlocks).filter((function(item, index, self) {
+                        return !item.dataset.showmoreMedia;
+                    }));
+                    showMoreBlocksRegular.length ? initItems(showMoreBlocksRegular) : null;
+                    document.addEventListener("click", showMoreActions);
+                    window.addEventListener("resize", showMoreActions);
+                    mdQueriesArray = dataMediaQueries(showMoreBlocks, "showmoreMedia");
+                    if (mdQueriesArray && mdQueriesArray.length) {
+                        mdQueriesArray.forEach((mdQueriesItem => {
+                            mdQueriesItem.matchMedia.addEventListener("change", (function() {
+                                initItems(mdQueriesItem.itemsArray, mdQueriesItem.matchMedia);
+                            }));
+                        }));
+                        initItemsMedia(mdQueriesArray);
+                    }
+                }
+                function initItemsMedia(mdQueriesArray) {
+                    mdQueriesArray.forEach((mdQueriesItem => {
+                        initItems(mdQueriesItem.itemsArray, mdQueriesItem.matchMedia);
+                    }));
+                }
+                function initItems(showMoreBlocks, matchMedia) {
+                    showMoreBlocks.forEach((showMoreBlock => {
+                        initItem(showMoreBlock, matchMedia);
+                    }));
+                }
+                function initItem(showMoreBlock, matchMedia = false) {
+                    showMoreBlock = matchMedia ? showMoreBlock.item : showMoreBlock;
+                    let showMoreContent = showMoreBlock.querySelectorAll("[data-showmore-content]");
+                    let showMoreButton = showMoreBlock.querySelectorAll("[data-showmore-button]");
+                    showMoreContent = Array.from(showMoreContent).filter((item => item.closest("[data-showmore]") === showMoreBlock))[0];
+                    showMoreButton = Array.from(showMoreButton).filter((item => item.closest("[data-showmore]") === showMoreBlock))[0];
+                    const hiddenHeight = calculateHiddenHeight(showMoreBlocks);
+                    if (matchMedia.matches || !matchMedia) if (hiddenHeight < getOriginalHeight(showMoreContent)) {
+                        _slideUp(showMoreContent, 0, showMoreBlock.classList.contains("_showmore-active") ? getOriginalHeight(showMoreContent) : hiddenHeight);
+                        showMoreButton.hidden = false;
+                    } else {
+                        _slideDown(showMoreContent, 0, hiddenHeight);
+                        showMoreButton.hidden = true;
+                    } else {
+                        _slideDown(showMoreContent, 0, hiddenHeight);
+                        showMoreButton.hidden = true;
+                    }
+                }
+                function calculateHiddenHeight(showMoreBlocks) {
+                    let maxHiddenHeight = 0;
+                    showMoreBlocks.forEach((showMoreBlock => {
+                        let showMoreContent = showMoreBlock.querySelector("[data-showmore-content]");
+                        const hiddenHeight = getHeight(showMoreBlock, showMoreContent);
+                        if (hiddenHeight > maxHiddenHeight) maxHiddenHeight = hiddenHeight;
+                    }));
+                    return maxHiddenHeight;
+                }
+                function getHeight(showMoreBlock, showMoreContent) {
+                    let hiddenHeight = 0;
+                    const showMoreType = showMoreBlock.dataset.showmore ? showMoreBlock.dataset.showmore : "size";
+                    const rowGap = parseFloat(getComputedStyle(showMoreContent).rowGap) ? parseFloat(getComputedStyle(showMoreContent).rowGap) : 0;
+                    if (showMoreType === "items") {
+                        const showMoreTypeValue = showMoreContent.dataset.showmoreContent ? showMoreContent.dataset.showmoreContent : 3;
+                        const showMoreItems = showMoreContent.children;
+                        for (let index = 1; index < showMoreItems.length; index++) {
+                            const showMoreItem = showMoreItems[index - 1];
+                            const marginTop = parseFloat(getComputedStyle(showMoreItem).marginTop) ? parseFloat(getComputedStyle(showMoreItem).marginTop) : 0;
+                            const marginBottom = parseFloat(getComputedStyle(showMoreItem).marginBottom) ? parseFloat(getComputedStyle(showMoreItem).marginBottom) : 0;
+                            hiddenHeight += showMoreItem.offsetHeight + marginTop;
+                            if (index == showMoreTypeValue) break;
+                            hiddenHeight += marginBottom;
+                        }
+                        rowGap ? hiddenHeight += (showMoreTypeValue - 1) * rowGap : null;
+                    } else {
+                        const showMoreTypeValue = showMoreContent.dataset.showmoreContent ? showMoreContent.dataset.showmoreContent : 150;
+                        hiddenHeight = showMoreTypeValue;
+                    }
+                    return hiddenHeight;
+                }
+                function getOriginalHeight(showMoreContent) {
+                    let parentHidden;
+                    let hiddenHeight = showMoreContent.offsetHeight;
+                    showMoreContent.style.removeProperty("height");
+                    if (showMoreContent.closest(`[hidden]`)) {
+                        parentHidden = showMoreContent.closest(`[hidden]`);
+                        parentHidden.hidden = false;
+                    }
+                    let originalHeight = showMoreContent.offsetHeight;
+                    parentHidden ? parentHidden.hidden = true : null;
+                    showMoreContent.style.height = `${hiddenHeight}px`;
+                    return originalHeight;
+                }
+                function showMoreActions(e) {
+                    const targetEvent = e.target;
+                    const targetType = e.type;
+                    if (targetType === "click") {
+                        if (targetEvent.closest("[data-showmore-button]")) {
+                            const showMoreButton = targetEvent.closest("[data-showmore-button]");
+                            const showMoreBlock = showMoreButton.closest("[data-showmore]");
+                            const showMoreContent = showMoreBlock.querySelector("[data-showmore-content]");
+                            const showMoreSpeed = showMoreBlock.dataset.showmoreButton ? showMoreBlock.dataset.showmoreButton : "500";
+                            const hiddenHeight = getHeight(showMoreBlock, showMoreContent);
+                            if (!showMoreContent.classList.contains("_slide")) {
+                                showMoreBlock.classList.contains("_showmore-active") ? _slideUp(showMoreContent, showMoreSpeed, hiddenHeight) : _slideDown(showMoreContent, showMoreSpeed, hiddenHeight);
+                                showMoreBlock.classList.toggle("_showmore-active");
+                            }
+                        }
+                    } else if (targetType === "resize") {
+                        showMoreBlocksRegular && showMoreBlocksRegular.length ? initItems(showMoreBlocksRegular) : null;
+                        mdQueriesArray && mdQueriesArray.length ? initItemsMedia(mdQueriesArray) : null;
+                    }
+                }
+            }));
+        }
         function FLS(message) {
             setTimeout((() => {
                 if (window.FLS) console.log(message);
@@ -902,7 +1018,6 @@
             _openToHash() {
                 let classInHash = document.querySelector(`.${window.location.hash.replace("#", "")}`) ? `.${window.location.hash.replace("#", "")}` : document.querySelector(`${window.location.hash}`) ? `${window.location.hash}` : null;
                 const buttons = document.querySelector(`[${this.options.attributeOpenButton} = "${classInHash}"]`) ? document.querySelector(`[${this.options.attributeOpenButton} = "${classInHash}"]`) : document.querySelector(`[${this.options.attributeOpenButton} = "${classInHash.replace(".", "#")}"]`);
-                this.youTubeCode = buttons.getAttribute(this.options.youtubeAttribute) ? buttons.getAttribute(this.options.youtubeAttribute) : null;
                 if (buttons && classInHash) this.open(classInHash);
             }
             _setHash() {
@@ -4926,100 +5041,105 @@
         });
         document.addEventListener("DOMContentLoaded", (function() {
             const runningTapeContainer = document.querySelector(".running-tape-container");
-            const runningTape = document.querySelector(".running-tape");
-            let isDragging = false;
-            let startPosition = null;
-            let animationId;
-            runningTapeContainer.addEventListener("mousedown", startDrag);
-            runningTapeContainer.addEventListener("mouseup", endDrag);
-            runningTapeContainer.addEventListener("mousemove", drag);
-            runningTapeContainer.addEventListener("mouseleave", endDrag);
-            runningTapeContainer.addEventListener("touchstart", startTouch, {
-                passive: true
-            });
-            runningTapeContainer.addEventListener("touchmove", dragTouch, {
-                passive: true
-            });
-            runningTapeContainer.addEventListener("touchend", endDrag);
-            function startDrag(event) {
-                isDragging = true;
-                startPosition = event.clientX;
-                runningTapeContainer.style.cursor = "grabbing";
-            }
-            function endDrag() {
-                isDragging = false;
-                startPosition = null;
-                runningTapeContainer.style.cursor = "grab";
-            }
-            function drag(event) {
-                if (isDragging) {
-                    const movement = event.clientX - startPosition;
-                    runningTapeContainer.scrollLeft -= movement;
+            if (runningTapeContainer) {
+                const runningTape = document.querySelector(".running-tape");
+                let isDragging = false;
+                let startPosition = null;
+                let animationId;
+                runningTapeContainer.addEventListener("mousedown", startDrag);
+                runningTapeContainer.addEventListener("mouseup", endDrag);
+                runningTapeContainer.addEventListener("mousemove", drag);
+                runningTapeContainer.addEventListener("mouseleave", endDrag);
+                runningTapeContainer.addEventListener("touchstart", startTouch, {
+                    passive: true
+                });
+                runningTapeContainer.addEventListener("touchmove", dragTouch, {
+                    passive: true
+                });
+                runningTapeContainer.addEventListener("touchend", endDrag);
+                function startDrag(event) {
+                    isDragging = true;
                     startPosition = event.clientX;
-                    if (runningTapeContainer.scrollLeft <= 0) runningTapeContainer.scrollLeft += runningTape.scrollWidth / 2; else if (runningTapeContainer.scrollLeft >= runningTape.scrollWidth / 2) runningTapeContainer.scrollLeft -= runningTape.scrollWidth / 2;
+                    runningTapeContainer.style.cursor = "grabbing";
                 }
-            }
-            function startTouch(event) {
-                isDragging = true;
-                startPosition = event.touches[0].clientX;
-            }
-            function dragTouch(event) {
-                if (isDragging) {
-                    const movement = event.touches[0].clientX - startPosition;
-                    runningTapeContainer.scrollLeft -= movement;
+                function endDrag() {
+                    isDragging = false;
+                    startPosition = null;
+                    runningTapeContainer.style.cursor = "grab";
+                }
+                function drag(event) {
+                    if (isDragging) {
+                        const movement = event.clientX - startPosition;
+                        runningTapeContainer.scrollLeft -= movement;
+                        startPosition = event.clientX;
+                        if (runningTapeContainer.scrollLeft <= 0) runningTapeContainer.scrollLeft += runningTape.scrollWidth / 2; else if (runningTapeContainer.scrollLeft >= runningTape.scrollWidth / 2) runningTapeContainer.scrollLeft -= runningTape.scrollWidth / 2;
+                    }
+                }
+                function startTouch(event) {
+                    isDragging = true;
                     startPosition = event.touches[0].clientX;
-                    if (runningTapeContainer.scrollLeft <= 0) runningTapeContainer.scrollLeft += runningTape.scrollWidth / 2; else if (runningTapeContainer.scrollLeft >= runningTape.scrollWidth / 2) runningTapeContainer.scrollLeft -= runningTape.scrollWidth / 2;
                 }
-            }
-            function loopScroll() {
-                if (runningTapeContainer.scrollLeft >= runningTape.scrollWidth / 2) runningTapeContainer.scrollLeft -= runningTape.scrollWidth / 2;
-                animationId = requestAnimationFrame(loopScroll);
-            }
-            loopScroll();
-            runningTapeContainer.addEventListener("mouseenter", (function() {
-                cancelAnimationFrame(animationId);
-            }));
-            runningTapeContainer.addEventListener("mouseleave", (function() {
+                function dragTouch(event) {
+                    if (isDragging) {
+                        const movement = event.touches[0].clientX - startPosition;
+                        runningTapeContainer.scrollLeft -= movement;
+                        startPosition = event.touches[0].clientX;
+                        if (runningTapeContainer.scrollLeft <= 0) runningTapeContainer.scrollLeft += runningTape.scrollWidth / 2; else if (runningTapeContainer.scrollLeft >= runningTape.scrollWidth / 2) runningTapeContainer.scrollLeft -= runningTape.scrollWidth / 2;
+                    }
+                }
+                function loopScroll() {
+                    if (runningTapeContainer.scrollLeft >= runningTape.scrollWidth / 2) runningTapeContainer.scrollLeft -= runningTape.scrollWidth / 2;
+                    animationId = requestAnimationFrame(loopScroll);
+                }
                 loopScroll();
-            }));
-            runningTapeContainer.addEventListener("mouseenter", (function() {
-                runningTape.querySelectorAll(".running-tape__line").forEach((function(line) {
-                    line.style.animationPlayState = "paused";
+                runningTapeContainer.addEventListener("mouseenter", (function() {
+                    cancelAnimationFrame(animationId);
                 }));
-            }));
-            runningTapeContainer.addEventListener("mouseleave", (function() {
-                runningTape.querySelectorAll(".running-tape__line").forEach((function(line) {
-                    line.style.animationPlayState = "running";
+                runningTapeContainer.addEventListener("mouseleave", (function() {
+                    loopScroll();
                 }));
-            }));
-            runningTapeContainer.addEventListener("mousedown", (function() {
-                runningTape.querySelectorAll(".running-tape__line").forEach((function(line) {
-                    line.style.animationPlayState = "paused";
+                runningTapeContainer.addEventListener("mouseenter", (function() {
+                    runningTape.querySelectorAll(".running-tape__line").forEach((function(line) {
+                        line.style.animationPlayState = "paused";
+                    }));
                 }));
-            }));
-            runningTapeContainer.addEventListener("mouseup", (function() {
-                runningTape.querySelectorAll(".running-tape__line").forEach((function(line) {
-                    line.style.animationPlayState = "running";
+                runningTapeContainer.addEventListener("mouseleave", (function() {
+                    runningTape.querySelectorAll(".running-tape__line").forEach((function(line) {
+                        line.style.animationPlayState = "running";
+                    }));
                 }));
-            }));
-            runningTapeContainer.addEventListener("touchstart", (function() {
-                runningTape.querySelectorAll(".running-tape__line").forEach((function(line) {
-                    line.style.animationPlayState = "paused";
+                runningTapeContainer.addEventListener("mousedown", (function() {
+                    runningTape.querySelectorAll(".running-tape__line").forEach((function(line) {
+                        line.style.animationPlayState = "paused";
+                    }));
                 }));
-            }));
-            runningTapeContainer.addEventListener("touchend", (function() {
-                runningTape.querySelectorAll(".running-tape__line").forEach((function(line) {
-                    line.style.animationPlayState = "running";
+                runningTapeContainer.addEventListener("mouseup", (function() {
+                    runningTape.querySelectorAll(".running-tape__line").forEach((function(line) {
+                        line.style.animationPlayState = "running";
+                    }));
                 }));
-            }));
-            runningTapeContainer.addEventListener("mousedown", (function(event) {
-                event.preventDefault();
-            }));
+                runningTapeContainer.addEventListener("touchstart", (function() {
+                    runningTape.querySelectorAll(".running-tape__line").forEach((function(line) {
+                        line.style.animationPlayState = "paused";
+                    }));
+                }));
+                runningTapeContainer.addEventListener("touchend", (function() {
+                    runningTape.querySelectorAll(".running-tape__line").forEach((function(line) {
+                        line.style.animationPlayState = "running";
+                    }));
+                }));
+                runningTapeContainer.addEventListener("mousedown", (function(event) {
+                    event.preventDefault();
+                }));
+            }
         }));
         window["FLS"] = false;
         menuInit();
         spollers();
         tabs();
+        document.addEventListener("DOMContentLoaded", (function() {
+            showMore();
+        }));
         formFieldsInit({
             viewPass: false,
             autoHeight: false

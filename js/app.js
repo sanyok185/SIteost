@@ -4897,12 +4897,17 @@
                 }));
             }));
         }));
+        if (document.querySelector(".hero__animation video")) {
+            document.querySelector(".hero__animation video");
+        }
         document.addEventListener("DOMContentLoaded", (function() {
-            let animation = document.querySelector(".hero__animation video");
             animation.muted = true;
             animation.autoplay = true;
             animation.loop = true;
             animation.playsInline = true;
+            animation.play();
+        }));
+        animation.addEventListener("suspend", (() => {
             animation.play();
         }));
         document.addEventListener("DOMContentLoaded", (function() {

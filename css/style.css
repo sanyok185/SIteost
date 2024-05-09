@@ -678,7 +678,8 @@ body::after {
   transition: all .8s
 }
 .title--black {
-  color: #000
+  color: #000;
+  line-height: 133.333333%
 }
 .title._watcher-view {
   opacity: 1;
@@ -1671,6 +1672,9 @@ body::after {
   .item-tabs__labels:not(:last-child) {
     margin-bottom: 2.5rem
   }
+  .title--black {
+    font-size: 3.75rem
+  }
   .header__container {
     gap: 1.875rem
   }
@@ -1767,9 +1771,6 @@ body::after {
   .request__bg--2 {
     width: 19.75rem
   }
-  .request__bg--2 {
-    right: -3.125rem
-  }
   .request__bg--3 {
     height: 14.3125rem
   }
@@ -1839,6 +1840,14 @@ body::after {
     font-size: .875rem
   }
 }
+@media (min-width:25em) and (min-width:75.625em) {
+  .options {
+    gap: 1.25rem
+  }
+  .request__bg--2 {
+    right: -3.125rem
+  }
+}
 @media (max-width:50em) {
   .footer__contacts {
     flex-direction: column-reverse;
@@ -1847,7 +1856,7 @@ body::after {
 }
 @media (max-width:25em) {
   .options {
-    flex-wrap: wrap
+    gap: .5rem
   }
   .spollers__title {
     font-size: 1rem
@@ -2044,7 +2053,8 @@ body::after {
   }
   .why__body {
     flex-direction: column;
-    align-items: center
+    align-items: center;
+    gap: .9375rem
   }
   .request__container {
     grid-template-columns: 52% auto
@@ -2069,6 +2079,9 @@ body::after {
 @media (max-width:47.99875em) {
   .item-tabs {
     grid-template-columns: 1fr
+  }
+  .title--black {
+    line-height: 133.333333%
   }
   .title__green {
     padding: 0 .75rem
@@ -2105,7 +2118,7 @@ body::after {
     padding: .8125rem 1.5625rem
   }
   .why__image {
-    bottom: -.0625rem
+    bottom: -.1875rem
   }
   .why__items {
     gap: 1.875rem
@@ -2130,9 +2143,6 @@ body::after {
   }
   .request__bg--2 {
     width: 17.5rem
-  }
-  .request__bg--2 {
-    right: -9.375rem
   }
   .cases__title {
     justify-self: start
@@ -2167,6 +2177,9 @@ body::after {
 @media (max-width:29.99875em) {
   .item-tabs__button {
     width: 100%
+  }
+  .title__green {
+    padding: .1875rem .625rem
   }
   .menu__body {
     padding: 5rem .9375rem 5rem .9375rem
@@ -2216,6 +2229,9 @@ body::after {
   }
   .item-tabs__labels:not(:last-child) {
     margin-bottom: .9375rem
+  }
+  .title--black {
+    font-size: 1.875rem
   }
   .footer__head {
     padding-bottom: 1.25rem
@@ -2296,10 +2312,10 @@ body::after {
 @media (max-width:27.5em) {
   .request__bg--1 {
     top: 23.125rem;
-    left: 4.375rem
+    left: -1.25rem
   }
   .request__bg--2 {
-    display: none
+    right: -7.5rem
   }
 }
 @media (max-width:24.375em) {
@@ -2307,9 +2323,36 @@ body::after {
     font-size: 2.3125rem
   }
 }
+@media (max-width:23.75em) {
+  .options__label {
+    gap: 6px
+  }
+}
 @media (max-width:23.4375em) {
   .title__green svg:nth-child(2) {
     display: none
+  }
+}
+@media (max-width:21.875em) {
+  .options {
+    flex-wrap: wrap
+  }
+}
+@media (min-width:25em) and (min-width:61.99875em) and (max-width:75.625em) {
+  @supports (gap:clamp(0.75rem ,-1.524974773rem + 3.6693881295vw ,1.25rem)) {
+    .options {
+      gap: clamp(.75rem ,-1.524974773rem + 3.6693881295vw ,1.25rem)
+    }
+  }
+  @supports not (gap:clamp(0.75rem ,-1.524974773rem + 3.6693881295vw ,1.25rem)) {
+    .options {
+      gap: calc(.75rem + .5 * (100vw - 61.99875rem)/ 13.62625)
+    }
+  }
+}
+@media (min-width:25em) and (max-width:61.99875em) {
+  .options {
+    gap: .75rem
   }
 }
 @media (min-width:61.99875em) and (max-width:75.625em) {
@@ -2363,6 +2406,16 @@ body::after {
   @supports not (margin-bottom:clamp(0.9375rem ,0.0253599476rem + 3.2722513089vw ,2.5rem)) {
     .item-tabs__labels:not(:last-child) {
       margin-bottom: calc(.9375rem + 1.5625 * (100vw - 27.875rem)/ 47.75)
+    }
+  }
+  @supports (font-size:clamp(1.875rem ,0.7804319372rem + 3.9267015707vw ,3.75rem)) {
+    .title--black {
+      font-size: clamp(1.875rem ,.7804319372rem + 3.9267015707vw ,3.75rem)
+    }
+  }
+  @supports not (font-size:clamp(1.875rem ,0.7804319372rem + 3.9267015707vw ,3.75rem)) {
+    .title--black {
+      font-size: calc(1.875rem + 1.875 * (100vw - 27.875rem)/ 47.75)
     }
   }
   @supports (padding-bottom:clamp(1.25rem ,0.8851439791rem + 1.3089005236vw ,1.875rem)) {
@@ -2930,16 +2983,6 @@ body::after {
       width: calc(17.5rem + 2.25 * (100vw - 47.99875rem)/ 27.62625)
     }
   }
-  @supports (right:clamp(-9.375rem ,-20.233954346rem + 22.6234107054vw ,-3.125rem)) {
-    .request__bg--2 {
-      right: clamp(-9.375rem ,-20.233954346rem + 22.6234107054vw ,-3.125rem)
-    }
-  }
-  @supports not (right:clamp(-9.375rem ,-20.233954346rem + 22.6234107054vw ,-3.125rem)) {
-    .request__bg--2 {
-      right: calc(-9.375rem + 6.25 * (100vw - 47.99875rem)/ 27.62625)
-    }
-  }
 }
 @media (min-width:27.5em) and (max-width:47.99875em) {
   @supports (width:clamp(10rem ,1.866882127rem + 29.5749740838vw ,16.0625rem)) {
@@ -2987,7 +3030,24 @@ body::after {
     }
   }
 }
-@media (min-width:20em) and (max-width:47.99875em) {
+@media (min-width:25em) and (min-width:47.99875em) and (max-width:75.625em) {
+  @supports (right:clamp(-9.375rem ,-20.233954346rem + 22.6234107054vw ,-3.125rem)) {
+    .request__bg--2 {
+      right: clamp(-9.375rem ,-20.233954346rem + 22.6234107054vw ,-3.125rem)
+    }
+  }
+  @supports not (right:clamp(-9.375rem ,-20.233954346rem + 22.6234107054vw ,-3.125rem)) {
+    .request__bg--2 {
+      right: calc(-9.375rem + 6.25 * (100vw - 47.99875rem)/ 27.62625)
+    }
+  }
+}
+@media (min-width:25em) and (max-width:47.99875em) {
+  .request__bg--2 {
+    right: -9.375rem
+  }
+}
+@media (min-width:25em) and (min-width:20em) and (max-width:47.99875em) {
   @supports (right:clamp(-6.4375rem ,-11.0359196169rem + 22.9920980847vw ,0.0000000625rem)) {
     .request__bg--2 {
       right: clamp(-6.4375rem ,-11.0359196169rem + 22.9920980847vw ,.0000000625rem)

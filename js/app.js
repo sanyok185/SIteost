@@ -4900,6 +4900,8 @@
         document.addEventListener("DOMContentLoaded", (function() {
             let animation = document.querySelector(".hero__animation video");
             animation.muted = true;
+            animation.autoplay = true;
+            animation.loop = true;
             animation.play();
         }));
         document.addEventListener("DOMContentLoaded", (function() {

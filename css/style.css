@@ -1068,9 +1068,14 @@ body::after {
   line-height: 1.375
 }
 .hero__animation {
+  transition: all .6s .5s;
+  opacity: 0;
   position: relative;
   z-index: -1;
   flex: 0 1 34%
+}
+.hero__animation._watcher-view {
+  opacity: 1
 }
 .hero__animation img,
 .hero__animation video {
@@ -2229,9 +2234,6 @@ body::after {
   }
   .hero__text {
     line-height: 1.57143
-  }
-  .hero__animation {
-    transition: all 1s 4s
   }
   .hero__animation {
     position: absolute;

@@ -1557,8 +1557,7 @@ body::after {
   display: grid
 }
 .questions__title {
-  justify-self: start;
-  margin-bottom: 2.5rem
+  justify-self: start
 }
 .questions__button {
   justify-self: center;
@@ -1914,6 +1913,9 @@ body::after {
   .questions {
     padding-bottom: 2.5rem
   }
+  .questions__title {
+    margin-bottom: 2.5rem
+  }
   .questions__button {
     margin-top: 2.5rem
   }
@@ -1978,6 +1980,15 @@ body::after {
   }
   .request--third {
     padding-top: 1.875rem
+  }
+  .questions {
+    padding-bottom: 1.875rem
+  }
+  .questions__title {
+    margin-bottom: 1.875rem
+  }
+  .questions__button {
+    margin-top: 1.875rem
   }
   .hero-case {
     padding-top: 4.375rem
@@ -2487,12 +2498,6 @@ body::after {
   .feedback__title {
     margin-bottom: .625rem
   }
-  .questions {
-    padding-bottom: 1.875rem
-  }
-  .questions__button {
-    margin-top: 1.875rem
-  }
 }
 @media (max-width:27.5em) {
   .request__bg--1 {
@@ -2836,26 +2841,6 @@ body::after {
       margin-bottom: calc(.625rem + .3125 * (100vw - 27.875rem)/ 47.75)
     }
   }
-  @supports (padding-bottom:clamp(1.875rem ,1.5101439791rem + 1.3089005236vw ,2.5rem)) {
-    .questions {
-      padding-bottom: clamp(1.875rem ,1.5101439791rem + 1.3089005236vw ,2.5rem)
-    }
-  }
-  @supports not (padding-bottom:clamp(1.875rem ,1.5101439791rem + 1.3089005236vw ,2.5rem)) {
-    .questions {
-      padding-bottom: calc(1.875rem + .625 * (100vw - 27.875rem)/ 47.75)
-    }
-  }
-  @supports (margin-top:clamp(1.875rem ,1.5101439791rem + 1.3089005236vw ,2.5rem)) {
-    .questions__button {
-      margin-top: clamp(1.875rem ,1.5101439791rem + 1.3089005236vw ,2.5rem)
-    }
-  }
-  @supports not (margin-top:clamp(1.875rem ,1.5101439791rem + 1.3089005236vw ,2.5rem)) {
-    .questions__button {
-      margin-top: calc(1.875rem + .625 * (100vw - 27.875rem)/ 47.75)
-    }
-  }
 }
 @media (min-width:25.625em) and (min-width:26em) and (max-width:75.625em) {
   @supports (font-size:clamp(2.8125rem ,2.3213161209rem + 1.8891687657vw ,3.75rem)) {
@@ -2903,6 +2888,36 @@ body::after {
   @supports not (padding-top:clamp(1.875rem ,1.5475440806rem + 1.2594458438vw ,2.5rem)) {
     .request--third {
       padding-top: calc(1.875rem + .625 * (100vw - 26rem)/ 49.625)
+    }
+  }
+  @supports (padding-bottom:clamp(1.875rem ,1.5475440806rem + 1.2594458438vw ,2.5rem)) {
+    .questions {
+      padding-bottom: clamp(1.875rem ,1.5475440806rem + 1.2594458438vw ,2.5rem)
+    }
+  }
+  @supports not (padding-bottom:clamp(1.875rem ,1.5475440806rem + 1.2594458438vw ,2.5rem)) {
+    .questions {
+      padding-bottom: calc(1.875rem + .625 * (100vw - 26rem)/ 49.625)
+    }
+  }
+  @supports (margin-bottom:clamp(1.875rem ,1.5475440806rem + 1.2594458438vw ,2.5rem)) {
+    .questions__title {
+      margin-bottom: clamp(1.875rem ,1.5475440806rem + 1.2594458438vw ,2.5rem)
+    }
+  }
+  @supports not (margin-bottom:clamp(1.875rem ,1.5475440806rem + 1.2594458438vw ,2.5rem)) {
+    .questions__title {
+      margin-bottom: calc(1.875rem + .625 * (100vw - 26rem)/ 49.625)
+    }
+  }
+  @supports (margin-top:clamp(1.875rem ,1.5475440806rem + 1.2594458438vw ,2.5rem)) {
+    .questions__button {
+      margin-top: clamp(1.875rem ,1.5475440806rem + 1.2594458438vw ,2.5rem)
+    }
+  }
+  @supports not (margin-top:clamp(1.875rem ,1.5475440806rem + 1.2594458438vw ,2.5rem)) {
+    .questions__button {
+      margin-top: calc(1.875rem + .625 * (100vw - 26rem)/ 49.625)
     }
   }
   @supports (padding-top:clamp(4.375rem ,4.1457808564rem + 0.8816120907vw ,4.8125rem)) {

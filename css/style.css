@@ -2006,7 +2006,9 @@ body::after {
     padding: 0 .375rem
   }
   .title__green svg:nth-child(2) {
-    right: 28%
+    left: 50%;
+    -webkit-transform: translate(-50%,0);
+    transform: translate(-50%,0)
   }
   .footer__social {
     gap: .625rem
